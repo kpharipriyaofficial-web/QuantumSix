@@ -1,0 +1,4330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    AquaMind AI | Marine Ecosystem Intelligence
+</title>
+
+
+<!-- =====================================================
+     GOOGLE FONTS
+===================================================== -->
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap"
+    rel="stylesheet"
+>
+
+
+<style>
+
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    /*
+       MAIN WEBSITE FONT
+       Entire website uses Yeseva One
+    */
+
+    font-family:
+        "Yeseva One",
+        serif;
+
+    background:
+        #07516b;
+
+    color:
+        white;
+
+    overflow-x:
+        hidden;
+
+}
+
+
+
+/* =====================================================
+   ANIMATED OCEAN BACKGROUND
+===================================================== */
+
+.ocean-background {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        -100;
+
+    overflow:
+        hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(
+                220,
+                255,
+                255,
+                0.35
+            ),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            180deg,
+            #42c4d4 0%,
+            #087f9e 35%,
+            #075873 70%,
+            #03394f 100%
+        );
+
+}
+
+
+
+/* =====================================================
+   OCEAN LIGHT
+===================================================== */
+
+.ocean-light {
+
+    position:
+        absolute;
+
+    width:
+        700px;
+
+    height:
+        700px;
+
+    top:
+        -300px;
+
+    left:
+        50%;
+
+    transform:
+        translateX(-50%);
+
+    background:
+
+        radial-gradient(
+            ellipse,
+            rgba(
+                230,
+                255,
+                255,
+                0.35
+            ),
+            transparent 65%
+        );
+
+    filter:
+        blur(25px);
+
+    animation:
+        oceanLightMove
+        12s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+@keyframes oceanLightMove {
+
+    0% {
+
+        transform:
+            translateX(-60%)
+            rotate(-5deg);
+
+        opacity:
+            0.5;
+
+    }
+
+    100% {
+
+        transform:
+            translateX(-40%)
+            rotate(5deg);
+
+        opacity:
+            0.9;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   LIGHT RAYS
+===================================================== */
+
+.light-rays {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    overflow:
+        hidden;
+
+    opacity:
+        0.25;
+
+}
+
+
+.light-rays span {
+
+    position:
+        absolute;
+
+    top:
+        -20%;
+
+    width:
+        180px;
+
+    height:
+        150%;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(
+                230,
+                255,
+                255,
+                0.35
+            ),
+            transparent 75%
+        );
+
+    filter:
+        blur(18px);
+
+    transform:
+        rotate(15deg);
+
+    animation:
+        rayMove
+        14s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+.light-rays span:nth-child(1) {
+
+    left:
+        5%;
+
+}
+
+
+.light-rays span:nth-child(2) {
+
+    left:
+        28%;
+
+    animation-delay:
+        3s;
+
+}
+
+
+.light-rays span:nth-child(3) {
+
+    left:
+        55%;
+
+    animation-delay:
+        6s;
+
+}
+
+
+.light-rays span:nth-child(4) {
+
+    left:
+        82%;
+
+    animation-delay:
+        2s;
+
+}
+
+
+@keyframes rayMove {
+
+    from {
+
+        transform:
+            translateX(-60px)
+            rotate(12deg);
+
+    }
+
+    to {
+
+        transform:
+            translateX(70px)
+            rotate(20deg);
+
+    }
+
+}
+
+
+
+/* =====================================================
+   BUBBLES
+===================================================== */
+
+.bubbles {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+}
+
+
+.bubbles span {
+
+    position:
+        absolute;
+
+    bottom:
+        -50px;
+
+    width:
+        15px;
+
+    height:
+        15px;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.45
+        );
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.05
+        );
+
+    animation:
+        bubbleRise
+        15s
+        linear
+        infinite;
+
+}
+
+
+.bubbles span:nth-child(1) {
+
+    left:
+        5%;
+
+    animation-delay:
+        1s;
+
+}
+
+
+.bubbles span:nth-child(2) {
+
+    left:
+        15%;
+
+    width:
+        8px;
+
+    height:
+        8px;
+
+    animation-delay:
+        5s;
+
+}
+
+
+.bubbles span:nth-child(3) {
+
+    left:
+        25%;
+
+    width:
+        20px;
+
+    height:
+        20px;
+
+    animation-delay:
+        3s;
+
+}
+
+
+.bubbles span:nth-child(4) {
+
+    left:
+        38%;
+
+    animation-delay:
+        8s;
+
+}
+
+
+.bubbles span:nth-child(5) {
+
+    left:
+        50%;
+
+    width:
+        10px;
+
+    height:
+        10px;
+
+    animation-delay:
+        4s;
+
+}
+
+
+.bubbles span:nth-child(6) {
+
+    left:
+        62%;
+
+    width:
+        22px;
+
+    height:
+        22px;
+
+    animation-delay:
+        7s;
+
+}
+
+
+.bubbles span:nth-child(7) {
+
+    left:
+        75%;
+
+    animation-delay:
+        2s;
+
+}
+
+
+.bubbles span:nth-child(8) {
+
+    left:
+        88%;
+
+    width:
+        9px;
+
+    height:
+        9px;
+
+    animation-delay:
+        6s;
+
+}
+
+
+@keyframes bubbleRise {
+
+    0% {
+
+        transform:
+            translateY(0)
+            translateX(0);
+
+        opacity:
+            0;
+
+    }
+
+    15% {
+
+        opacity:
+            0.7;
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-50vh)
+            translateX(30px);
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            translateX(-30px);
+
+        opacity:
+            0;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   PLANKTON PARTICLES
+===================================================== */
+
+.plankton {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+}
+
+
+.plankton span {
+
+    position:
+        absolute;
+
+    width:
+        5px;
+
+    height:
+        5px;
+
+    border-radius:
+        50%;
+
+    background:
+        #dfffff;
+
+    box-shadow:
+        0 0 12px
+        rgba(
+            220,
+            255,
+            255,
+            0.9
+        );
+
+    animation:
+        planktonFloat
+        10s
+        ease-in-out
+        infinite;
+
+}
+
+
+.plankton span:nth-child(1) {
+
+    left:
+        8%;
+
+    top:
+        30%;
+
+}
+
+
+.plankton span:nth-child(2) {
+
+    left:
+        18%;
+
+    top:
+        70%;
+
+    animation-delay:
+        2s;
+
+}
+
+
+.plankton span:nth-child(3) {
+
+    left:
+        32%;
+
+    top:
+        20%;
+
+    animation-delay:
+        4s;
+
+}
+
+
+.plankton span:nth-child(4) {
+
+    left:
+        45%;
+
+    top:
+        65%;
+
+    animation-delay:
+        1s;
+
+}
+
+
+.plankton span:nth-child(5) {
+
+    left:
+        57%;
+
+    top:
+        35%;
+
+    animation-delay:
+        5s;
+
+}
+
+
+.plankton span:nth-child(6) {
+
+    left:
+        70%;
+
+    top:
+        75%;
+
+    animation-delay:
+        3s;
+
+}
+
+
+.plankton span:nth-child(7) {
+
+    left:
+        82%;
+
+    top:
+        25%;
+
+    animation-delay:
+        6s;
+
+}
+
+
+.plankton span:nth-child(8) {
+
+    left:
+        92%;
+
+    top:
+        60%;
+
+    animation-delay:
+        2s;
+
+}
+
+
+@keyframes planktonFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translate(
+                0,
+                0
+            );
+
+    }
+
+    50% {
+
+        transform:
+            translate(
+                25px,
+                -35px
+            );
+
+    }
+
+}
+
+
+
+/* =====================================================
+   MOUSE GLOW
+===================================================== */
+
+.mouse-glow {
+
+    position:
+        fixed;
+
+    width:
+        300px;
+
+    height:
+        300px;
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(
+                220,
+                255,
+                255,
+                0.15
+            ),
+            transparent 65%
+        );
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    z-index:
+        -1;
+
+}
+
+
+
+/* =====================================================
+   LOGIN PAGE
+===================================================== */
+
+#loginPage {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        5000;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        20px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(
+                3,
+                45,
+                65,
+                0.45
+            ),
+            rgba(
+                0,
+                70,
+                90,
+                0.35
+            )
+        );
+
+    backdrop-filter:
+        blur(5px);
+
+}
+
+
+.login-box {
+
+    width:
+        420px;
+
+    max-width:
+        100%;
+
+    padding:
+        40px;
+
+    border-radius:
+        28px;
+
+    background:
+
+        rgba(
+            6,
+            65,
+            83,
+            0.72
+        );
+
+    backdrop-filter:
+        blur(25px);
+
+    border:
+        1px solid
+        rgba(
+            230,
+            255,
+            255,
+            0.25
+        );
+
+    box-shadow:
+
+        0 30px 80px
+        rgba(
+            0,
+            25,
+            40,
+            0.3
+        );
+
+    text-align:
+        center;
+
+}
+
+
+.login-logo {
+
+    width:
+        65px;
+
+    height:
+        65px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin:
+        0 auto 20px;
+
+    border-radius:
+        20px;
+
+    font-size:
+        30px;
+
+    background:
+        rgba(
+            230,
+            255,
+            255,
+            0.15
+        );
+
+}
+
+
+.login-box h1 {
+
+    font-size:
+        30px;
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.login-box p {
+
+    color:
+        #c9eaf0;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.7;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.login-tabs {
+
+    display:
+        flex;
+
+    gap:
+        5px;
+
+    margin-bottom:
+        25px;
+
+    padding:
+        5px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    border-radius:
+        12px;
+
+}
+
+
+.login-tab {
+
+    flex:
+        1;
+
+    padding:
+        11px;
+
+    border:
+        none;
+
+    border-radius:
+        9px;
+
+    background:
+        transparent;
+
+    color:
+        #ccebf0;
+
+    cursor:
+        pointer;
+
+    font-family:
+        inherit;
+
+}
+
+
+.login-tab.active {
+
+    background:
+        rgba(
+            230,
+            255,
+            255,
+            0.2
+        );
+
+    color:
+        white;
+
+}
+
+
+.form-group {
+
+    text-align:
+        left;
+
+    margin-bottom:
+        15px;
+
+}
+
+
+.form-group label {
+
+    display:
+        block;
+
+    margin-bottom:
+        7px;
+
+    color:
+        #d9f5f8;
+
+    font-size:
+        12px;
+
+}
+
+
+.form-group input {
+
+    width:
+        100%;
+
+    padding:
+        13px 15px;
+
+    border:
+        1px solid
+        rgba(
+            230,
+            255,
+            255,
+            0.2
+        );
+
+    border-radius:
+        12px;
+
+    outline:
+        none;
+
+    background:
+        rgba(
+            0,
+            40,
+            60,
+            0.35
+        );
+
+    color:
+        white;
+
+    font-family:
+        inherit;
+
+}
+
+
+.login-options {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    margin:
+        10px 0 20px;
+
+    font-size:
+        11px;
+
+    color:
+        #c9eaf0;
+
+}
+
+
+.login-button {
+
+    width:
+        100%;
+
+    padding:
+        14px;
+
+    border:
+        none;
+
+    border-radius:
+        14px;
+
+    background:
+        #e6fbff;
+
+    color:
+        #07516b;
+
+    font-weight:
+        600;
+
+    cursor:
+        pointer;
+
+    font-family:
+        inherit;
+
+}
+
+
+.login-message {
+
+    margin-top:
+        15px;
+
+    font-size:
+        11px;
+
+}
+
+
+
+/* =====================================================
+   MAIN SITE
+===================================================== */
+
+#mainSite {
+
+    display:
+        none;
+
+}
+
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+nav {
+
+    position:
+        fixed;
+
+    top:
+        0;
+
+    left:
+        0;
+
+    width:
+        100%;
+
+    height:
+        75px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    padding:
+        0 6%;
+
+    background:
+        rgba(
+            3,
+            55,
+            72,
+            0.7
+        );
+
+    backdrop-filter:
+        blur(20px);
+
+    border-bottom:
+        1px solid
+        rgba(
+            230,
+            255,
+            255,
+            0.15
+        );
+
+    z-index:
+        1000;
+
+}
+
+
+.logo {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    font-size:
+        20px;
+
+    font-weight:
+        700;
+
+}
+
+
+.logo-icon {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        13px;
+
+    background:
+        rgba(
+            230,
+            255,
+            255,
+            0.15
+        );
+
+}
+
+
+.nav-links {
+
+    display:
+        flex;
+
+    gap:
+        30px;
+
+    list-style:
+        none;
+
+}
+
+
+.nav-links a {
+
+    color:
+        #d8f5f8;
+
+    text-decoration:
+        none;
+
+    font-size:
+        13px;
+
+}
+
+
+.nav-button {
+
+    padding:
+        11px 20px;
+
+    border-radius:
+        25px;
+
+    color:
+        #07516b;
+
+    background:
+        #e8fcff;
+
+    text-decoration:
+        none;
+
+    font-size:
+        12px;
+
+    font-weight:
+        600;
+
+}
+
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    min-height:
+        100vh;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    padding:
+        130px 7% 80px;
+
+    position:
+        relative;
+
+}
+
+
+.hero-content {
+
+    max-width:
+        650px;
+
+    position:
+        relative;
+
+    z-index:
+        10;
+
+}
+
+
+.badge {
+
+    display:
+        inline-block;
+
+    padding:
+        8px 15px;
+
+    border:
+        1px solid
+        rgba(
+            230,
+            255,
+            255,
+            0.25
+        );
+
+    border-radius:
+        25px;
+
+    background:
+        rgba(
+            230,
+            255,
+            255,
+            0.1
+        );
+
+    font-size:
+        11px;
+
+    font-weight:
+        600;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.hero h1 {
+
+    font-size:
+        clamp(
+            45px,
+            7vw,
+            85px
+        );
+
+    font-weight:
+        700;
+
+    line-height:
+        1;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.hero h1 span {
+
+    color:
+        #d9fbff;
+
+}
+
+
+.hero-description {
+
+    max-width:
+        600px;
+
+    color:
+        #d1edf2;
+
+    font-size:
+        15px;
+
+    line-height:
+        1.8;
+
+    margin-bottom:
+        30px;
+
+}
+
+
+.hero-buttons {
+
+    display:
+        flex;
+
+    gap:
+        12px;
+
+}
+
+
+.primary-button,
+.secondary-button {
+
+    padding:
+        13px 23px;
+
+    border-radius:
+        25px;
+
+    text-decoration:
+        none;
+
+    font-size:
+        12px;
+
+    font-weight:
+        600;
+
+}
+
+
+.primary-button {
+
+    background:
+        #e9fcff;
+
+    color:
+        #07516b;
+
+}
+
+
+.secondary-button {
+
+    border:
+        1px solid
+        rgba(
+            230,
+            255,
+            255,
+            0.3
+        );
+
+    color:
+        white;
+
+}
+
+
+
+/* =====================================================
+   NEW HERO HOLOGRAPHIC OCEAN MONITOR
+   OLD ELLIPSE GRAPHIC REMOVED
+===================================================== */
+
+.ocean-monitor {
+
+    position:
+        absolute;
+
+    right:
+        7%;
+
+    top:
+        50%;
+
+    transform:
+        translateY(-50%);
+
+    width:
+        480px;
+
+    height:
+        480px;
+
+    border-radius:
+        35px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(
+                230,
+                255,
+                255,
+                0.12
+            ),
+            rgba(
+                0,
+                40,
+                65,
+                0.25
+            )
+        );
+
+    border:
+        1px solid
+        rgba(
+            230,
+            255,
+            255,
+            0.2
+        );
+
+    backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+
+        0 30px 100px
+        rgba(
+            0,
+            20,
+            40,
+            0.3
+        );
+
+    overflow:
+        hidden;
+
+    animation:
+        monitorFloat
+        6s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+@keyframes monitorFloat {
+
+    from {
+
+        transform:
+            translateY(-50%);
+
+    }
+
+    to {
+
+        transform:
+            translateY(-53%);
+
+    }
+
+}
+
+
+
+/* SCAN LINES */
+
+.ocean-monitor::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    right:
+        0;
+
+    height:
+        2px;
+
+    top:
+        -5px;
+
+    background:
+        rgba(
+            220,
+            255,
+            255,
+            0.7
+        );
+
+    box-shadow:
+
+        0 0 15px
+        rgba(
+            220,
+            255,
+            255,
+            0.8
+        );
+
+    animation:
+        scanner
+        5s
+        linear
+        infinite;
+
+}
+
+
+@keyframes scanner {
+
+    0% {
+
+        top:
+            0%;
+
+        opacity:
+            0;
+
+    }
+
+    10% {
+
+        opacity:
+            1;
+
+    }
+
+    90% {
+
+        opacity:
+            1;
+
+    }
+
+    100% {
+
+        top:
+            100%;
+
+        opacity:
+            0;
+
+    }
+
+}
+
+
+
+/* GRID */
+
+.monitor-grid {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(
+                220,
+                255,
+                255,
+                0.07
+            )
+            1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(
+                220,
+                255,
+                255,
+                0.07
+            )
+            1px,
+            transparent 1px
+        );
+
+    background-size:
+        45px 45px;
+
+}
+
+
+
+/* CENTER SONAR */
+
+.sonar {
+
+    position:
+        absolute;
+
+    width:
+        230px;
+
+    height:
+        230px;
+
+    top:
+        50%;
+
+    left:
+        50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    border:
+        1px solid
+        rgba(
+            220,
+            255,
+            255,
+            0.3
+        );
+
+    border-radius:
+        50%;
+
+}
+
+
+.sonar::before,
+.sonar::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        20px;
+
+    border:
+        1px solid
+        rgba(
+            220,
+            255,
+            255,
+            0.25
+        );
+
+    border-radius:
+        50%;
+
+}
+
+
+.sonar::after {
+
+    inset:
+        55px;
+
+}
+
+
+.sonar-sweep {
+
+    position:
+        absolute;
+
+    width:
+        50%;
+
+    height:
+        50%;
+
+    top:
+        0;
+
+    left:
+        50%;
+
+    transform-origin:
+        bottom left;
+
+    background:
+
+        conic-gradient(
+            from 0deg,
+            transparent,
+            rgba(
+                220,
+                255,
+                255,
+                0.25
+            ),
+            transparent 40%
+        );
+
+    animation:
+        sonarSweep
+        4s
+        linear
+        infinite;
+
+}
+
+
+@keyframes sonarSweep {
+
+    to {
+
+        transform:
+            rotate(
+                360deg
+            );
+
+    }
+
+}
+
+
+
+/* PLANKTON DATA POINTS */
+
+.data-point {
+
+    position:
+        absolute;
+
+    width:
+        9px;
+
+    height:
+        9px;
+
+    border-radius:
+        50%;
+
+    background:
+        #e5ffff;
+
+    box-shadow:
+
+        0 0 12px
+        #e5ffff;
+
+    animation:
+        pointPulse
+        2s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+.point1 {
+
+    top:
+        25%;
+
+    left:
+        30%;
+
+}
+
+
+.point2 {
+
+    top:
+        65%;
+
+    left:
+        25%;
+
+    animation-delay:
+        0.5s;
+
+}
+
+
+.point3 {
+
+    top:
+        35%;
+
+    right:
+        20%;
+
+    animation-delay:
+        1s;
+
+}
+
+
+.point4 {
+
+    bottom:
+        20%;
+
+    right:
+        35%;
+
+    animation-delay:
+        1.5s;
+
+}
+
+
+@keyframes pointPulse {
+
+    from {
+
+        transform:
+            scale(
+                0.7
+            );
+
+        opacity:
+            0.4;
+
+    }
+
+    to {
+
+        transform:
+            scale(
+                1.4
+            );
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+
+/* MONITOR HEADER */
+
+.monitor-header {
+
+    position:
+        absolute;
+
+    top:
+        20px;
+
+    left:
+        25px;
+
+    right:
+        25px;
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    font-size:
+        11px;
+
+    color:
+        #e4fbff;
+
+}
+
+
+.live-indicator {
+
+    color:
+        #dfffff;
+
+}
+
+
+.live-indicator::before {
+
+    content:
+        "";
+
+    display:
+        inline-block;
+
+    width:
+        6px;
+
+    height:
+        6px;
+
+    margin-right:
+        6px;
+
+    border-radius:
+        50%;
+
+    background:
+        #baffea;
+
+    box-shadow:
+        0 0 10px
+        #baffea;
+
+}
+
+
+
+/* MONITOR FOOTER */
+
+.monitor-footer {
+
+    position:
+        absolute;
+
+    bottom:
+        20px;
+
+    left:
+        25px;
+
+    right:
+        25px;
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    font-size:
+        9px;
+
+    color:
+        #c6e9ef;
+
+}
+
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stats {
+
+    padding:
+        35px 7%;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    gap:
+        20px;
+
+    background:
+        rgba(
+            2,
+            55,
+            72,
+            0.4
+        );
+
+    backdrop-filter:
+        blur(15px);
+
+}
+
+
+.stat {
+
+    text-align:
+        center;
+
+}
+
+
+.stat h3 {
+
+    font-size:
+        25px;
+
+}
+
+
+.stat p {
+
+    color:
+        #c8e8ed;
+
+    font-size:
+        11px;
+
+}
+
+
+
+/* =====================================================
+   DASHBOARD
+===================================================== */
+
+.dashboard {
+
+    padding:
+        100px 7%;
+
+}
+
+
+.section-title {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        50px;
+
+}
+
+
+.section-title h2 {
+
+    font-size:
+        38px;
+
+    margin-bottom:
+        15px;
+
+}
+
+
+.section-title p {
+
+    color:
+        #c8e8ed;
+
+    font-size:
+        13px;
+
+}
+
+
+
+/* =====================================================
+   FEATURE GRID
+===================================================== */
+
+.feature-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    gap:
+        20px;
+
+}
+
+
+
+/* =====================================================
+   DASHBOARD CARDS
+   ONLY CARDS USE CONSOLAS
+===================================================== */
+
+.feature-card {
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    min-height:
+        300px;
+
+    padding:
+        27px;
+
+    border-radius:
+        22px;
+
+    background:
+        rgba(
+            5,
+            65,
+            83,
+            0.58
+        );
+
+    backdrop-filter:
+        blur(20px);
+
+    border:
+        1px solid
+        rgba(
+            230,
+            255,
+            255,
+            0.16
+        );
+
+    transition:
+        0.4s;
+
+}
+
+
+.feature-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(
+            230,
+            255,
+            255,
+            0.35
+        );
+
+}
+
+
+.feature-icon {
+
+    width:
+        50px;
+
+    height:
+        50px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        14px;
+
+    background:
+        rgba(
+            230,
+            255,
+            255,
+            0.12
+        );
+
+    margin-bottom:
+        22px;
+
+    font-size:
+        20px;
+
+}
+
+
+.feature-card h3 {
+
+    font-size:
+        17px;
+
+    font-weight:
+        600;
+
+    margin-bottom:
+        12px;
+
+}
+
+
+.feature-card p {
+
+    color:
+        #c8e8ed;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.7;
+
+}
+
+
+
+/* =====================================================
+   UPLOAD AREA
+===================================================== */
+
+.upload-area {
+
+    margin-top:
+        20px;
+
+    padding:
+        15px;
+
+    border:
+        1px dashed
+        rgba(
+            230,
+            255,
+            255,
+            0.3
+        );
+
+    border-radius:
+        12px;
+
+}
+
+
+.upload-area input {
+
+    width:
+        100%;
+
+    color:
+        white;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    font-size:
+        10px;
+
+}
+
+
+.preview-image {
+
+    display:
+        none;
+
+    width:
+        100%;
+
+    height:
+        110px;
+
+    object-fit:
+        cover;
+
+    border-radius:
+        10px;
+
+    margin-top:
+        12px;
+
+}
+
+
+
+/* =====================================================
+   ANALYSIS CARDS
+===================================================== */
+
+#analysis-card,
+#understand-card,
+#location-card {
+
+    display:
+        none;
+
+}
+
+
+.live-analysis {
+
+    margin-top:
+        20px;
+
+    padding:
+        12px;
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(
+            230,
+            255,
+            255,
+            0.07
+        );
+
+    font-size:
+        10px;
+
+}
+
+
+.status-dot {
+
+    display:
+        inline-block;
+
+    width:
+        7px;
+
+    height:
+        7px;
+
+    border-radius:
+        50%;
+
+    background:
+        #8effd0;
+
+    margin-right:
+        5px;
+
+}
+
+
+.analysis-value {
+
+    margin-top:
+        20px;
+
+    font-size:
+        22px;
+
+    font-weight:
+        600;
+
+}
+
+
+.analysis-status {
+
+    margin-top:
+        8px;
+
+    color:
+        #c5e7ec;
+
+    font-size:
+        10px;
+
+}
+
+
+
+/* =====================================================
+   CARD APPEAR ANIMATION
+===================================================== */
+
+.card-appear {
+
+    animation:
+        cardAppear
+        0.7s
+        ease
+        forwards;
+
+}
+
+
+@keyframes cardAppear {
+
+    0% {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(
+                30px
+            );
+
+    }
+
+    100% {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(
+                0
+            );
+
+    }
+
+}
+
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    padding:
+        40px;
+
+    text-align:
+        center;
+
+    background:
+        rgba(
+            2,
+            40,
+            55,
+            0.5
+        );
+
+}
+
+
+footer p {
+
+    color:
+        #c2e4e9;
+
+    font-size:
+        11px;
+
+}
+
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (
+    max-width: 1100px
+) {
+
+
+    .ocean-monitor {
+
+        opacity:
+            0.35;
+
+        right:
+            -100px;
+
+    }
+
+
+    .feature-grid {
+
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+
+    }
+
+
+}
+
+
+@media (
+    max-width: 700px
+) {
+
+
+    .nav-links {
+
+        display:
+            none;
+
+    }
+
+
+    .ocean-monitor {
+
+        display:
+            none;
+
+    }
+
+
+    .stats {
+
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+
+    }
+
+
+    .feature-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            48px;
+
+    }
+
+
+}
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+<!-- =====================================================
+     ANIMATED BACKGROUND
+===================================================== -->
+
+<div class="ocean-background">
+
+
+    <div class="ocean-light"></div>
+
+
+    <div class="light-rays">
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+    </div>
+
+
+    <div class="bubbles">
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+    </div>
+
+
+    <div class="plankton">
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+    </div>
+
+
+</div>
+
+
+
+<div
+    class="mouse-glow"
+    id="mouseGlow"
+></div>
+
+
+
+<!-- =====================================================
+     LOGIN PAGE
+===================================================== -->
+
+<div id="loginPage">
+
+
+    <div class="login-box">
+
+
+        <div class="login-logo">
+
+            🌊
+
+        </div>
+
+
+        <h1>
+
+            AquaMind AI
+
+        </h1>
+
+
+        <p>
+
+            Marine Ecosystem Intelligence
+            for a smarter and healthier ocean.
+
+        </p>
+
+
+
+        <div class="login-tabs">
+
+
+            <button
+                class="login-tab active"
+                id="signInTab"
+            >
+
+                Sign In
+
+            </button>
+
+
+            <button
+                class="login-tab"
+                id="signUpTab"
+            >
+
+                Sign Up
+
+            </button>
+
+
+        </div>
+
+
+
+        <form id="loginForm">
+
+
+            <div class="form-group">
+
+
+                <label>
+
+                    Email Address
+
+                </label>
+
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+            </div>
+
+
+
+            <div
+                class="form-group"
+                id="confirmPasswordGroup"
+                style="display:none;"
+            >
+
+
+                <label>
+
+                    Confirm Password
+
+                </label>
+
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm your password"
+                >
+
+
+            </div>
+
+
+
+            <div class="form-group">
+
+
+                <label>
+
+                    Password
+
+                </label>
+
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+
+            </div>
+
+
+
+            <div class="login-options">
+
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                    >
+
+                    Remember me
+
+                </label>
+
+
+                <span>
+
+                    Forgot password?
+
+                </span>
+
+
+            </div>
+
+
+
+            <button
+                type="submit"
+                class="login-button"
+                id="loginButton"
+            >
+
+                Sign In
+
+            </button>
+
+
+            <div
+                class="login-message"
+                id="loginMessage"
+            ></div>
+
+
+        </form>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     MAIN SITE
+===================================================== -->
+
+<div id="mainSite">
+
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav>
+
+
+    <div class="logo">
+
+
+        <div class="logo-icon">
+
+            🌊
+
+        </div>
+
+
+        AquaMind AI
+
+
+    </div>
+
+
+
+    <ul class="nav-links">
+
+
+        <li>
+
+            <a href="#">
+
+                Home
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="#dashboard">
+
+                Dashboard
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="#about">
+
+                About
+
+            </a>
+
+        </li>
+
+
+    </ul>
+
+
+
+    <a
+        href="#dashboard"
+        class="nav-button"
+    >
+
+        Launch Platform
+
+    </a>
+
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+
+    <div class="hero-content">
+
+
+        <div class="badge">
+
+            ● AI-POWERED MARINE INTELLIGENCE
+
+        </div>
+
+
+
+        <h1>
+
+            Understand
+
+            <span>
+
+                Our Oceans.
+
+            </span>
+
+        </h1>
+
+
+
+        <p class="hero-description">
+
+            AquaMind AI transforms plankton monitoring
+            into intelligent ecosystem insights using
+            computer vision, environmental analytics,
+            and real-time ecological intelligence.
+
+        </p>
+
+
+
+        <div class="hero-buttons">
+
+
+            <a
+                href="#dashboard"
+                class="primary-button"
+            >
+
+                Explore Platform
+
+            </a>
+
+
+            <a
+                href="#about"
+                class="secondary-button"
+            >
+
+                Learn More
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         NEW HOLOGRAPHIC OCEAN MONITOR
+    ================================================= -->
+
+    <div class="ocean-monitor">
+
+
+        <div class="monitor-grid"></div>
+
+
+        <div class="monitor-header">
+
+
+            <span>
+
+                AQUAMIND // LIVE SCAN
+
+            </span>
+
+
+            <span class="live-indicator">
+
+                LIVE
+
+            </span>
+
+
+        </div>
+
+
+
+        <div class="sonar">
+
+
+            <div class="sonar-sweep"></div>
+
+
+        </div>
+
+
+
+        <div class="data-point point1"></div>
+
+
+        <div class="data-point point2"></div>
+
+
+        <div class="data-point point3"></div>
+
+
+        <div class="data-point point4"></div>
+
+
+
+        <div class="monitor-footer">
+
+
+            <span>
+
+                PLANKTON DETECTION
+
+            </span>
+
+
+            <span>
+
+                SYSTEM ACTIVE
+
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section class="stats">
+
+
+    <div class="stat">
+
+
+        <h3>
+
+            AI
+
+        </h3>
+
+
+        <p>
+
+            Intelligent Analysis
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="stat">
+
+
+        <h3>
+
+            LIVE
+
+        </h3>
+
+
+        <p>
+
+            Environmental Monitoring
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="stat">
+
+
+        <h3>
+
+            24/7
+
+        </h3>
+
+
+        <p>
+
+            Ecosystem Intelligence
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="stat">
+
+
+        <h3>
+
+            🌊
+
+        </h3>
+
+
+        <p>
+
+            Marine Protection
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     DASHBOARD
+===================================================== -->
+
+<section
+    class="dashboard"
+    id="dashboard"
+>
+
+
+    <div class="section-title">
+
+
+        <h2>
+
+            Marine Intelligence Dashboard
+
+        </h2>
+
+
+        <p>
+
+            Upload an image to simulate
+            real-time ecosystem analysis.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="feature-grid">
+
+
+
+        <!-- CARD 01 -->
+
+        <div class="feature-card">
+
+
+            <div class="feature-icon">
+
+                📷
+
+            </div>
+
+
+            <h3>
+
+                01. Capture
+
+            </h3>
+
+
+            <p>
+
+                Upload a plankton image captured
+                from the monitoring device.
+
+            </p>
+
+
+
+            <div class="upload-area">
+
+
+                <input
+                    type="file"
+                    id="imageUpload"
+                    accept="image/*"
+                >
+
+
+                <img
+                    id="imagePreview"
+                    class="preview-image"
+                    alt="Uploaded plankton image"
+                >
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- CARD 02 -->
+
+        <div
+            class="feature-card"
+            id="analysis-card"
+        >
+
+
+            <div class="feature-icon">
+
+                🤖
+
+            </div>
+
+
+            <h3>
+
+                02. Analyze
+
+            </h3>
+
+
+            <p>
+
+                AI models identify and quantify
+                plankton while detecting
+                unfamiliar organisms.
+
+            </p>
+
+
+
+            <div class="live-analysis">
+
+
+                <span class="status-dot"></span>
+
+
+                AI Analysis Active
+
+
+            </div>
+
+
+
+            <div
+                class="analysis-value"
+                id="temperatureValue"
+            >
+
+                24.5°C
+
+            </div>
+
+
+
+            <div
+                class="analysis-status"
+                id="temperatureStatus"
+            >
+
+                Suitable environmental conditions
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- CARD 03 -->
+
+        <div
+            class="feature-card"
+            id="understand-card"
+        >
+
+
+            <div class="feature-icon">
+
+                💧
+
+            </div>
+
+
+            <h3>
+
+                03. Total Dissolved Salts (TDS)
+
+            </h3>
+
+
+            <p>
+
+                Analyze water quality using
+                simulated total dissolved solids
+                monitoring.
+
+            </p>
+
+
+
+            <div
+                class="analysis-value"
+                id="tdsValue"
+            >
+
+                35,000 ppm
+
+            </div>
+
+
+
+            <div
+                class="analysis-status"
+                id="waterStatus"
+            >
+
+                Sea Water
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- CARD 04 -->
+
+        <div
+            class="feature-card"
+            id="location-card"
+        >
+
+
+            <div class="feature-icon">
+
+                📍
+
+            </div>
+
+
+            <h3>
+
+                04. Location
+
+            </h3>
+
+
+            <p>
+
+                Track simulated monitoring
+                coordinates within Chennai
+                coastal waters.
+
+            </p>
+
+
+
+            <div
+                class="analysis-value"
+                id="locationValue"
+            >
+
+                13.0827° N
+
+            </div>
+
+
+
+            <div
+                class="analysis-status"
+                id="longitudeValue"
+            >
+
+                80.2707° E
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section
+    class="dashboard"
+    id="about"
+>
+
+
+    <div class="section-title">
+
+
+        <h2>
+
+            Intelligent Marine Monitoring
+
+        </h2>
+
+
+        <p>
+
+            AquaMind AI combines affordable hardware,
+            computer vision, explainable AI and
+            ecological analytics to support
+            proactive marine ecosystem monitoring.
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+
+<footer>
+
+
+    <p>
+
+        AquaMind AI —
+        AI-Powered Marine Ecosystem Intelligence
+
+    </p>
+
+
+</footer>
+
+
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   MOUSE GLOW
+===================================================== */
+
+const mouseGlow =
+    document.getElementById(
+        "mouseGlow"
+    );
+
+
+document.addEventListener(
+    "mousemove",
+    function(event) {
+
+        mouseGlow.style.left =
+            event.clientX + "px";
+
+        mouseGlow.style.top =
+            event.clientY + "px";
+
+    }
+);
+
+
+
+/* =====================================================
+   LOGIN SYSTEM
+===================================================== */
+
+const loginPage =
+    document.getElementById(
+        "loginPage"
+    );
+
+
+const mainSite =
+    document.getElementById(
+        "mainSite"
+    );
+
+
+const signInTab =
+    document.getElementById(
+        "signInTab"
+    );
+
+
+const signUpTab =
+    document.getElementById(
+        "signUpTab"
+    );
+
+
+const confirmPasswordGroup =
+    document.getElementById(
+        "confirmPasswordGroup"
+    );
+
+
+const confirmPassword =
+    document.getElementById(
+        "confirmPassword"
+    );
+
+
+const loginButton =
+    document.getElementById(
+        "loginButton"
+    );
+
+
+const loginMessage =
+    document.getElementById(
+        "loginMessage"
+    );
+
+
+const loginForm =
+    document.getElementById(
+        "loginForm"
+    );
+
+
+let isSignUp =
+    false;
+
+
+
+signInTab.addEventListener(
+    "click",
+    function() {
+
+        isSignUp =
+            false;
+
+        signInTab.classList.add(
+            "active"
+        );
+
+        signUpTab.classList.remove(
+            "active"
+        );
+
+        confirmPasswordGroup.style.display =
+            "none";
+
+        confirmPassword.required =
+            false;
+
+        loginButton.textContent =
+            "Sign In";
+
+        loginMessage.textContent =
+            "";
+
+    }
+);
+
+
+
+signUpTab.addEventListener(
+    "click",
+    function() {
+
+        isSignUp =
+            true;
+
+        signUpTab.classList.add(
+            "active"
+        );
+
+        signInTab.classList.remove(
+            "active"
+        );
+
+        confirmPasswordGroup.style.display =
+            "block";
+
+        confirmPassword.required =
+            true;
+
+        loginButton.textContent =
+            "Create Account";
+
+        loginMessage.textContent =
+            "";
+
+    }
+);
+
+
+
+loginForm.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        const email =
+            document.getElementById(
+                "email"
+            ).value;
+
+
+        const password =
+            document.getElementById(
+                "password"
+            ).value;
+
+
+
+        if (
+            isSignUp
+        ) {
+
+            if (
+                password !==
+                confirmPassword.value
+            ) {
+
+                loginMessage.textContent =
+                    "Passwords do not match.";
+
+                return;
+
+            }
+
+
+            loginMessage.textContent =
+                "Account created successfully!";
+
+
+            setTimeout(
+                openMainSite,
+                800
+            );
+
+
+        }
+
+        else {
+
+            if (
+                email &&
+                password
+            ) {
+
+                loginMessage.textContent =
+                    "Welcome to AquaMind AI!";
+
+
+                setTimeout(
+                    openMainSite,
+                    800
+                );
+
+            }
+
+        }
+
+    }
+);
+
+
+
+function openMainSite() {
+
+    loginPage.style.display =
+        "none";
+
+    mainSite.style.display =
+        "block";
+
+}
+
+
+
+/* =====================================================
+   IMAGE UPLOAD
+===================================================== */
+
+const imageUpload =
+    document.getElementById(
+        "imageUpload"
+    );
+
+
+const imagePreview =
+    document.getElementById(
+        "imagePreview"
+    );
+
+
+const analysisCard =
+    document.getElementById(
+        "analysis-card"
+    );
+
+
+const understandCard =
+    document.getElementById(
+        "understand-card"
+    );
+
+
+const locationCard =
+    document.getElementById(
+        "location-card"
+    );
+
+
+
+imageUpload.addEventListener(
+    "change",
+    function(event) {
+
+
+        const file =
+            event.target.files[0];
+
+
+        if (
+            !file
+        ) {
+
+            return;
+
+        }
+
+
+
+        imagePreview.src =
+            URL.createObjectURL(
+                file
+            );
+
+
+        imagePreview.style.display =
+            "block";
+
+
+
+        /*
+           RESET ALL ANALYSIS CARDS
+        */
+
+        analysisCard.style.display =
+            "none";
+
+        understandCard.style.display =
+            "none";
+
+        locationCard.style.display =
+            "none";
+
+
+
+        analysisCard.classList.remove(
+            "card-appear"
+        );
+
+        understandCard.classList.remove(
+            "card-appear"
+        );
+
+        locationCard.classList.remove(
+            "card-appear"
+        );
+
+
+
+        /*
+           CARD 02
+           AFTER 3 SECONDS
+        */
+
+        setTimeout(
+            function() {
+
+
+                analysisCard.style.display =
+                    "block";
+
+
+                analysisCard.classList.add(
+                    "card-appear"
+                );
+
+
+                updateTemperature();
+
+
+            },
+
+            3000
+
+        );
+
+
+
+        /*
+           CARD 03
+           AFTER 4 SECONDS
+        */
+
+        setTimeout(
+            function() {
+
+
+                understandCard.style.display =
+                    "block";
+
+
+                understandCard.classList.add(
+                    "card-appear"
+                );
+
+
+                updateTDS();
+
+
+            },
+
+            4000
+
+        );
+
+
+
+        /*
+           CARD 04
+           AFTER 5 SECONDS
+        */
+
+        setTimeout(
+            function() {
+
+
+                locationCard.style.display =
+                    "block";
+
+
+                locationCard.classList.add(
+                    "card-appear"
+                );
+
+
+                updateLocation();
+
+
+            },
+
+            5000
+
+        );
+
+
+    }
+);
+
+
+
+/* =====================================================
+   TEMPERATURE
+===================================================== */
+
+const temperatureValue =
+    document.getElementById(
+        "temperatureValue"
+    );
+
+
+const temperatureStatus =
+    document.getElementById(
+        "temperatureStatus"
+    );
+
+
+function updateTemperature() {
+
+
+    const temperature =
+        (
+            Math.random()
+            *
+            14
+            +
+            18
+        ).toFixed(1);
+
+
+    temperatureValue.textContent =
+        temperature
+        +
+        "°C";
+
+
+    if (
+        temperature < 20
+    ) {
+
+        temperatureStatus.textContent =
+            "Cool water conditions";
+
+    }
+
+    else if (
+        temperature <= 28
+    ) {
+
+        temperatureStatus.textContent =
+            "Favorable conditions";
+
+    }
+
+    else {
+
+        temperatureStatus.textContent =
+            "Elevated temperature detected";
+
+    }
+
+}
+
+
+
+/* =====================================================
+   TDS WATER ANALYSIS
+===================================================== */
+
+const tdsValue =
+    document.getElementById(
+        "tdsValue"
+    );
+
+
+const waterStatus =
+    document.getElementById(
+        "waterStatus"
+    );
+
+
+function updateTDS() {
+
+
+    const tds =
+        Math.floor(
+            Math.random()
+            *
+            (
+                42000
+                -
+                500
+            )
+            +
+            500
+        );
+
+
+    tdsValue.textContent =
+        tds.toLocaleString()
+        +
+        " ppm";
+
+
+    if (
+        tds < 1000
+    ) {
+
+        waterStatus.textContent =
+            "Fresh Water";
+
+    }
+
+    else if (
+        tds < 5000
+    ) {
+
+        waterStatus.textContent =
+            "Brackish Water";
+
+    }
+
+    else if (
+        tds < 15000
+    ) {
+
+        waterStatus.textContent =
+            "Highly Brackish Water";
+
+    }
+
+    else if (
+        tds < 30000
+    ) {
+
+        waterStatus.textContent =
+            "Saline Water";
+
+    }
+
+    else if (
+        tds <= 40000
+    ) {
+
+        waterStatus.textContent =
+            "Sea Water";
+
+    }
+
+    else {
+
+        waterStatus.textContent =
+            "Brine";
+
+    }
+
+}
+
+
+
+/* =====================================================
+   CHENNAI COASTAL LOCATION
+===================================================== */
+
+const locationValue =
+    document.getElementById(
+        "locationValue"
+    );
+
+
+const longitudeValue =
+    document.getElementById(
+        "longitudeValue"
+    );
+
+
+function updateLocation() {
+
+
+    /*
+       Simulated Chennai
+       coastal monitoring area.
+
+       Latitude:
+       12.95 - 13.15
+
+       Longitude:
+       80.20 - 80.35
+    */
+
+
+    const latitude =
+        (
+            12.95
+            +
+            Math.random()
+            *
+            0.20
+        ).toFixed(4);
+
+
+    const longitude =
+        (
+            80.20
+            +
+            Math.random()
+            *
+            0.15
+        ).toFixed(4);
+
+
+    locationValue.textContent =
+        latitude
+        +
+        "° N";
+
+
+    longitudeValue.textContent =
+        longitude
+        +
+        "° E";
+
+}
+
+
+
+/* =====================================================
+   CONTINUOUS LIVE SIMULATION
+===================================================== */
+
+setInterval(
+    function() {
+
+
+        if (
+            analysisCard.style.display
+            ===
+            "block"
+        ) {
+
+            updateTemperature();
+
+        }
+
+
+        if (
+            understandCard.style.display
+            ===
+            "block"
+        ) {
+
+            updateTDS();
+
+        }
+
+
+        if (
+            locationCard.style.display
+            ===
+            "block"
+        ) {
+
+            updateLocation();
+
+        }
+
+
+    },
+
+    4000
+
+);
+
+
+</script>
+
+
+</body>
+
+</html>
