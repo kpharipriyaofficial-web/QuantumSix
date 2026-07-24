@@ -1,11 +1,11 @@
-# Ignore datasets
-dataset/
-
-# Ignore trained models
-*.pth
-
-# Ignore zip files
+# Ignore archives
 *.zip
+
+# Ignore local config
+.config/
+
+# Ignore sample datasets
+sample_data/
 
 # Ignore Python cache
 __pycache__/
