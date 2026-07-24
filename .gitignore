@@ -1,0 +1,12 @@
+# Ignore datasets
+dataset/
+
+# Ignore trained models
+*.pth
+
+# Ignore zip files
+*.zip
+
+# Ignore Python cache
+__pycache__/
+*.pyc
