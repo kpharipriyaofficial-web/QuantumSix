@@ -50,7 +50,7 @@ AquaMind integrates AI, IoT, environmental sensing, and embedded systems to auto
 ---
 ## System Architecture
 
-![System Architecture](Downloads/arch.png)
+
 
 ### Description
 The AquaMind platform integrates environmental sensors, an ESP32 microcontroller, backend services, AI/ML models, a database, and a web dashboard into a single monitoring pipeline.
@@ -67,8 +67,6 @@ The AquaMind platform integrates environmental sensors, an ESP32 microcontroller
 ---
 
 ## Project Workflow
-
-![Project Workflow](assets/images/project_workflow.png)
 
 ```text
 Water Sample
@@ -94,7 +92,7 @@ Alerts
 
 # 🤖 AI / ML Workflow
 
-![AI Workflow](assets/images/ml_workflow.png)
+
 
 ### Model 1 – Plankton Classification
 
@@ -148,15 +146,13 @@ Components:
 
 # 🔧 Wiring Diagram
 
-![Wiring Diagram](assets/images/wiring_diagram.png)
-
 Include the complete ESP32 wiring showing all sensor connections.
 
 ---
 
 # 📸 Hardware Prototype
 
-![Hardware Prototype](assets/images/hardware_setup.jpg)
+
 
 Will Add photographs of:
 - Complete prototype
