@@ -1,0 +1,5584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    AquaMind AI | Marine Ecosystem Intelligence
+</title>
+
+
+<!-- =====================================================
+     GOOGLE FONTS
+===================================================== -->
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap"
+    rel="stylesheet"
+>
+
+
+<style>
+
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    /*
+       MAIN WEBSITE FONT
+       Entire website uses Yeseva One
+    */
+
+    font-family:
+        "Yeseva One",
+        serif;
+
+    background:
+        #07516b;
+
+    color:
+        white;
+
+    overflow-x:
+        hidden;
+
+}
+
+
+
+/* =====================================================
+   ANIMATED OCEAN BACKGROUND
+===================================================== */
+
+.ocean-background {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        -100;
+
+    overflow:
+        hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(
+                220,
+                255,
+                255,
+                0.35
+            ),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            180deg,
+            #42c4d4 0%,
+            #087f9e 35%,
+            #075873 70%,
+            #03394f 100%
+        );
+
+}
+
+
+
+/* =====================================================
+   OCEAN LIGHT
+===================================================== */
+
+.ocean-light {
+
+    position:
+        absolute;
+
+    width:
+        700px;
+
+    height:
+        700px;
+
+    top:
+        -300px;
+
+    left:
+        50%;
+
+    transform:
+        translateX(-50%);
+
+    background:
+
+        radial-gradient(
+            ellipse,
+            rgba(
+                230,
+                255,
+                255,
+                0.35
+            ),
+            transparent 65%
+        );
+
+    filter:
+        blur(25px);
+
+    animation:
+        oceanLightMove
+        12s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+@keyframes oceanLightMove {
+
+    0% {
+
+        transform:
+            translateX(-60%)
+            rotate(-5deg);
+
+        opacity:
+            0.5;
+
+    }
+
+    100% {
+
+        transform:
+            translateX(-40%)
+            rotate(5deg);
+
+        opacity:
+            0.9;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   LIGHT RAYS
+===================================================== */
+
+.light-rays {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    overflow:
+        hidden;
+
+    opacity:
+        0.25;
+
+}
+
+
+.light-rays span {
+
+    position:
+        absolute;
+
+    top:
+        -20%;
+
+    width:
+        180px;
+
+    height:
+        150%;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(
+                230,
+                255,
+                255,
+                0.35
+            ),
+            transparent 75%
+        );
+
+    filter:
+        blur(18px);
+
+    transform:
+        rotate(15deg);
+
+    animation:
+        rayMove
+        14s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+.light-rays span:nth-child(1) {
+
+    left:
+        5%;
+
+}
+
+
+.light-rays span:nth-child(2) {
+
+    left:
+        28%;
+
+    animation-delay:
+        3s;
+
+}
+
+
+.light-rays span:nth-child(3) {
+
+    left:
+        55%;
+
+    animation-delay:
+        6s;
+
+}
+
+
+.light-rays span:nth-child(4) {
+
+    left:
+        82%;
+
+    animation-delay:
+        2s;
+
+}
+
+
+@keyframes rayMove {
+
+    from {
+
+        transform:
+            translateX(-60px)
+            rotate(12deg);
+
+    }
+
+    to {
+
+        transform:
+            translateX(70px)
+            rotate(20deg);
+
+    }
+
+}
+
+
+
+/* =====================================================
+   BUBBLES
+===================================================== */
+
+.bubbles {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+}
+
+
+.bubbles span {
+
+    position:
+        absolute;
+
+    bottom:
+        -50px;
+
+    width:
+        15px;
+
+    height:
+        15px;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.45
+        );
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.05
+        );
+
+    animation:
+        bubbleRise
+        15s
+        linear
+        infinite;
+
+}
+
+
+.bubbles span:nth-child(1) {
+
+    left:
+        5%;
+
+    animation-delay:
+        1s;
+
+}
+
+
+.bubbles span:nth-child(2) {
+
+    left:
+        15%;
+
+    width:
+        8px;
+
+    height:
+        8px;
+
+    animation-delay:
+        5s;
+
+}
+
+
+.bubbles span:nth-child(3) {
+
+    left:
+        25%;
+
+    width:
+        20px;
+
+    height:
+        20px;
+
+    animation-delay:
+        3s;
+
+}
+
+
+.bubbles span:nth-child(4) {
+
+    left:
+        38%;
+
+    animation-delay:
+        8s;
+
+}
+
+
+.bubbles span:nth-child(5) {
+
+    left:
+        50%;
+
+    width:
+        10px;
+
+    height:
+        10px;
+
+    animation-delay:
+        4s;
+
+}
+
+
+.bubbles span:nth-child(6) {
+
+    left:
+        62%;
+
+    width:
+        22px;
+
+    height:
+        22px;
+
+    animation-delay:
+        7s;
+
+}
+
+
+.bubbles span:nth-child(7) {
+
+    left:
+        75%;
+
+    animation-delay:
+        2s;
+
+}
+
+
+.bubbles span:nth-child(8) {
+
+    left:
+        88%;
+
+    width:
+        9px;
+
+    height:
+        9px;
+
+    animation-delay:
+        6s;
+
+}
+
+
+@keyframes bubbleRise {
+
+    0% {
+
+        transform:
+            translateY(0)
+            translateX(0);
+
+        opacity:
+            0;
+
+    }
+
+    15% {
+
+        opacity:
+            0.7;
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-50vh)
+            translateX(30px);
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            translateX(-30px);
+
+        opacity:
+            0;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   PLANKTON PARTICLES
+===================================================== */
+
+.plankton {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+}
+
+
+.plankton span {
+
+    position:
+        absolute;
+
+    width:
+        5px;
+
+    height:
+        5px;
+
+    border-radius:
+        50%;
+
+    background:
+        #dfffff;
+
+    box-shadow:
+        0 0 12px
+        rgba(
+            220,
+            255,
+            255,
+            0.9
+        );
+
+    animation:
+        planktonFloat
+        10s
+        ease-in-out
+        infinite;
+
+}
+
+
+.plankton span:nth-child(1) {
+
+    left:
+        8%;
+
+    top:
+        30%;
+
+}
+
+
+.plankton span:nth-child(2) {
+
+    left:
+        18%;
+
+    top:
+        70%;
+
+    animation-delay:
+        2s;
+
+}
+
+
+.plankton span:nth-child(3) {
+
+    left:
+        32%;
+
+    top:
+        20%;
+
+    animation-delay:
+        4s;
+
+}
+
+
+.plankton span:nth-child(4) {
+
+    left:
+        45%;
+
+    top:
+        65%;
+
+    animation-delay:
+        1s;
+
+}
+
+
+.plankton span:nth-child(5) {
+
+    left:
+        57%;
+
+    top:
+        35%;
+
+    animation-delay:
+        5s;
+
+}
+
+
+.plankton span:nth-child(6) {
+
+    left:
+        70%;
+
+    top:
+        75%;
+
+    animation-delay:
+        3s;
+
+}
+
+
+.plankton span:nth-child(7) {
+
+    left:
+        82%;
+
+    top:
+        25%;
+
+    animation-delay:
+        6s;
+
+}
+
+
+.plankton span:nth-child(8) {
+
+    left:
+        92%;
+
+    top:
+        60%;
+
+    animation-delay:
+        2s;
+
+}
+
+
+@keyframes planktonFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translate(
+                0,
+                0
+            );
+
+    }
+
+    50% {
+
+        transform:
+            translate(
+                25px,
+                -35px
+            );
+
+    }
+
+}
+
+
+
+/* =====================================================
+   MOUSE GLOW
+===================================================== */
+
+.mouse-glow {
+
+    position:
+        fixed;
+
+    width:
+        300px;
+
+    height:
+        300px;
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(
+                220,
+                255,
+                255,
+                0.15
+            ),
+            transparent 65%
+        );
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    z-index:
+        -1;
+
+}
+
+
+
+/* =====================================================
+   LOGIN PAGE
+===================================================== */
+
+#loginPage {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        5000;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        20px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(
+                3,
+                45,
+                65,
+                0.45
+            ),
+            rgba(
+                0,
+                70,
+                90,
+                0.35
+            )
+        );
+
+    backdrop-filter:
+        blur(5px);
+
+}
+
+
+.login-box {
+
+    width:
+        420px;
+
+    max-width:
+        100%;
+
+    padding:
+        40px;
+
+    border-radius:
+        28px;
+
+    background:
+
+        rgba(
+            6,
+            65,
+            83,
+            0.72
+        );
+
+    backdrop-filter:
+        blur(25px);
+
+    border:
+        1px solid
+        rgba(
+            230,
+            255,
+            255,
+            0.25
+        );
+
+    box-shadow:
+
+        0 30px 80px
+        rgba(
+            0,
+            25,
+            40,
+            0.3
+        );
+
+    text-align:
+        center;
+
+}
+
+
+.login-logo {
+
+    width:
+        65px;
+
+    height:
+        65px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin:
+        0 auto 20px;
+
+    border-radius:
+        20px;
+
+    font-size:
+        30px;
+
+    background:
+        rgba(
+            230,
+            255,
+            255,
+            0.15
+        );
+
+}
+
+
+.login-box h1 {
+
+    font-size:
+        30px;
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.login-box p {
+
+    color:
+        #c9eaf0;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.7;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.login-tabs {
+
+    display:
+        flex;
+
+    gap:
+        5px;
+
+    margin-bottom:
+        25px;
+
+    padding:
+        5px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    border-radius:
+        12px;
+
+}
+
+
+.login-tab {
+
+    flex:
+        1;
+
+    padding:
+        11px;
+
+    border:
+        none;
+
+    border-radius:
+        9px;
+
+    background:
+        transparent;
+
+    color:
+        #ccebf0;
+
+    cursor:
+        pointer;
+
+    font-family:
+        inherit;
+
+}
+
+
+.login-tab.active {
+
+    background:
+        rgba(
+            230,
+            255,
+            255,
+            0.2
+        );
+
+    color:
+        white;
+
+}
+
+
+.form-group {
+
+    text-align:
+        left;
+
+    margin-bottom:
+        15px;
+
+}
+
+
+.form-group label {
+
+    display:
+        block;
+
+    margin-bottom:
+        7px;
+
+    color:
+        #d9f5f8;
+
+    font-size:
+        12px;
+
+}
+
+
+.form-group input {
+
+    width:
+        100%;
+
+    padding:
+        13px 15px;
+
+    border:
+        1px solid
+        rgba(
+            230,
+            255,
+            255,
+            0.2
+        );
+
+    border-radius:
+        12px;
+
+    outline:
+        none;
+
+    background:
+        rgba(
+            0,
+            40,
+            60,
+            0.35
+        );
+
+    color:
+        white;
+
+    font-family:
+        inherit;
+
+}
+
+
+.login-options {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    margin:
+        10px 0 20px;
+
+    font-size:
+        11px;
+
+    color:
+        #c9eaf0;
+
+}
+
+
+.login-button {
+
+    width:
+        100%;
+
+    padding:
+        14px;
+
+    border:
+        none;
+
+    border-radius:
+        14px;
+
+    background:
+        #e6fbff;
+
+    color:
+        #07516b;
+
+    font-weight:
+        600;
+
+    cursor:
+        pointer;
+
+    font-family:
+        inherit;
+
+}
+
+
+.login-message {
+
+    margin-top:
+        15px;
+
+    font-size:
+        11px;
+
+}
+
+
+
+/* =====================================================
+   MAIN SITE
+===================================================== */
+
+#mainSite {
+
+    display:
+        none;
+
+}
+
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+nav {
+
+    position:
+        fixed;
+
+    top:
+        0;
+
+    left:
+        0;
+
+    width:
+        100%;
+
+    height:
+        75px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    padding:
+        0 6%;
+
+    background:
+        rgba(
+            3,
+            55,
+            72,
+            0.7
+        );
+
+    backdrop-filter:
+        blur(20px);
+
+    border-bottom:
+        1px solid
+        rgba(
+            230,
+            255,
+            255,
+            0.15
+        );
+
+    z-index:
+        1000;
+
+}
+
+
+.logo {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    font-size:
+        20px;
+
+    font-weight:
+        700;
+
+}
+
+
+.logo-icon {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        13px;
+
+    background:
+        rgba(
+            230,
+            255,
+            255,
+            0.15
+        );
+
+}
+
+
+.nav-links {
+
+    display:
+        flex;
+
+    gap:
+        30px;
+
+    list-style:
+        none;
+
+}
+
+
+.nav-links a {
+
+    color:
+        #d8f5f8;
+
+    text-decoration:
+        none;
+
+    font-size:
+        13px;
+
+}
+
+
+.nav-button {
+
+    padding:
+        11px 20px;
+
+    border-radius:
+        25px;
+
+    color:
+        #07516b;
+
+    background:
+        #e8fcff;
+
+    text-decoration:
+        none;
+
+    font-size:
+        12px;
+
+    font-weight:
+        600;
+
+}
+
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    min-height:
+        100vh;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    padding:
+        130px 7% 80px;
+
+    position:
+        relative;
+
+}
+
+
+.hero-content {
+
+    max-width:
+        650px;
+
+    position:
+        relative;
+
+    z-index:
+        10;
+
+}
+
+
+.badge {
+
+    display:
+        inline-block;
+
+    padding:
+        8px 15px;
+
+    border:
+        1px solid
+        rgba(
+            230,
+            255,
+            255,
+            0.25
+        );
+
+    border-radius:
+        25px;
+
+    background:
+        rgba(
+            230,
+            255,
+            255,
+            0.1
+        );
+
+    font-size:
+        11px;
+
+    font-weight:
+        600;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.hero h1 {
+
+    font-size:
+        clamp(
+            45px,
+            7vw,
+            85px
+        );
+
+    font-weight:
+        700;
+
+    line-height:
+        1;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.hero h1 span {
+
+    color:
+        #d9fbff;
+
+}
+
+
+.hero-description {
+
+    max-width:
+        600px;
+
+    color:
+        #d1edf2;
+
+    font-size:
+        15px;
+
+    line-height:
+        1.8;
+
+    margin-bottom:
+        30px;
+
+}
+
+
+.hero-buttons {
+
+    display:
+        flex;
+
+    gap:
+        12px;
+
+}
+
+
+.primary-button,
+.secondary-button {
+
+    padding:
+        13px 23px;
+
+    border-radius:
+        25px;
+
+    text-decoration:
+        none;
+
+    font-size:
+        12px;
+
+    font-weight:
+        600;
+
+}
+
+
+.primary-button {
+
+    background:
+        #e9fcff;
+
+    color:
+        #07516b;
+
+}
+
+
+.secondary-button {
+
+    border:
+        1px solid
+        rgba(
+            230,
+            255,
+            255,
+            0.3
+        );
+
+    color:
+        white;
+
+}
+
+
+
+/* =====================================================
+   NEW HERO HOLOGRAPHIC OCEAN MONITOR
+   OLD ELLIPSE GRAPHIC REMOVED
+===================================================== */
+
+.ocean-monitor {
+
+    position:
+        absolute;
+
+    right:
+        7%;
+
+    top:
+        50%;
+
+    transform:
+        translateY(-50%);
+
+    width:
+        480px;
+
+    height:
+        480px;
+
+    border-radius:
+        35px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(
+                230,
+                255,
+                255,
+                0.12
+            ),
+            rgba(
+                0,
+                40,
+                65,
+                0.25
+            )
+        );
+
+    border:
+        1px solid
+        rgba(
+            230,
+            255,
+            255,
+            0.2
+        );
+
+    backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+
+        0 30px 100px
+        rgba(
+            0,
+            20,
+            40,
+            0.3
+        );
+
+    overflow:
+        hidden;
+
+    animation:
+        monitorFloat
+        6s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+@keyframes monitorFloat {
+
+    from {
+
+        transform:
+            translateY(-50%);
+
+    }
+
+    to {
+
+        transform:
+            translateY(-53%);
+
+    }
+
+}
+
+
+
+/* SCAN LINES */
+
+.ocean-monitor::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    right:
+        0;
+
+    height:
+        2px;
+
+    top:
+        -5px;
+
+    background:
+        rgba(
+            220,
+            255,
+            255,
+            0.7
+        );
+
+    box-shadow:
+
+        0 0 15px
+        rgba(
+            220,
+            255,
+            255,
+            0.8
+        );
+
+    animation:
+        scanner
+        5s
+        linear
+        infinite;
+
+}
+
+
+@keyframes scanner {
+
+    0% {
+
+        top:
+            0%;
+
+        opacity:
+            0;
+
+    }
+
+    10% {
+
+        opacity:
+            1;
+
+    }
+
+    90% {
+
+        opacity:
+            1;
+
+    }
+
+    100% {
+
+        top:
+            100%;
+
+        opacity:
+            0;
+
+    }
+
+}
+
+
+
+/* GRID */
+
+.monitor-grid {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(
+                220,
+                255,
+                255,
+                0.07
+            )
+            1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(
+                220,
+                255,
+                255,
+                0.07
+            )
+            1px,
+            transparent 1px
+        );
+
+    background-size:
+        45px 45px;
+
+}
+
+
+
+/* CENTER SONAR */
+
+.sonar {
+
+    position:
+        absolute;
+
+    width:
+        230px;
+
+    height:
+        230px;
+
+    top:
+        50%;
+
+    left:
+        50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    border:
+        1px solid
+        rgba(
+            220,
+            255,
+            255,
+            0.3
+        );
+
+    border-radius:
+        50%;
+
+}
+
+
+.sonar::before,
+.sonar::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        20px;
+
+    border:
+        1px solid
+        rgba(
+            220,
+            255,
+            255,
+            0.25
+        );
+
+    border-radius:
+        50%;
+
+}
+
+
+.sonar::after {
+
+    inset:
+        55px;
+
+}
+
+
+.sonar-sweep {
+
+    position:
+        absolute;
+
+    width:
+        50%;
+
+    height:
+        50%;
+
+    top:
+        0;
+
+    left:
+        50%;
+
+    transform-origin:
+        bottom left;
+
+    background:
+
+        conic-gradient(
+            from 0deg,
+            transparent,
+            rgba(
+                220,
+                255,
+                255,
+                0.25
+            ),
+            transparent 40%
+        );
+
+    animation:
+        sonarSweep
+        4s
+        linear
+        infinite;
+
+}
+
+
+@keyframes sonarSweep {
+
+    to {
+
+        transform:
+            rotate(
+                360deg
+            );
+
+    }
+
+}
+
+
+
+/* PLANKTON DATA POINTS */
+
+.data-point {
+
+    position:
+        absolute;
+
+    width:
+        9px;
+
+    height:
+        9px;
+
+    border-radius:
+        50%;
+
+    background:
+        #e5ffff;
+
+    box-shadow:
+
+        0 0 12px
+        #e5ffff;
+
+    animation:
+        pointPulse
+        2s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+.point1 {
+
+    top:
+        25%;
+
+    left:
+        30%;
+
+}
+
+
+.point2 {
+
+    top:
+        65%;
+
+    left:
+        25%;
+
+    animation-delay:
+        0.5s;
+
+}
+
+
+.point3 {
+
+    top:
+        35%;
+
+    right:
+        20%;
+
+    animation-delay:
+        1s;
+
+}
+
+
+.point4 {
+
+    bottom:
+        20%;
+
+    right:
+        35%;
+
+    animation-delay:
+        1.5s;
+
+}
+
+
+@keyframes pointPulse {
+
+    from {
+
+        transform:
+            scale(
+                0.7
+            );
+
+        opacity:
+            0.4;
+
+    }
+
+    to {
+
+        transform:
+            scale(
+                1.4
+            );
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+
+/* MONITOR HEADER */
+
+.monitor-header {
+
+    position:
+        absolute;
+
+    top:
+        20px;
+
+    left:
+        25px;
+
+    right:
+        25px;
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    font-size:
+        11px;
+
+    color:
+        #e4fbff;
+
+}
+
+
+.live-indicator {
+
+    color:
+        #dfffff;
+
+}
+
+
+.live-indicator::before {
+
+    content:
+        "";
+
+    display:
+        inline-block;
+
+    width:
+        6px;
+
+    height:
+        6px;
+
+    margin-right:
+        6px;
+
+    border-radius:
+        50%;
+
+    background:
+        #baffea;
+
+    box-shadow:
+        0 0 10px
+        #baffea;
+
+}
+
+
+
+/* MONITOR FOOTER */
+
+.monitor-footer {
+
+    position:
+        absolute;
+
+    bottom:
+        20px;
+
+    left:
+        25px;
+
+    right:
+        25px;
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    font-size:
+        9px;
+
+    color:
+        #c6e9ef;
+
+}
+
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stats {
+
+    padding:
+        35px 7%;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    gap:
+        20px;
+
+    background:
+        rgba(
+            2,
+            55,
+            72,
+            0.4
+        );
+
+    backdrop-filter:
+        blur(15px);
+
+}
+
+
+.stat {
+
+    text-align:
+        center;
+
+}
+
+
+.stat h3 {
+
+    font-size:
+        25px;
+
+}
+
+
+.stat p {
+
+    color:
+        #c8e8ed;
+
+    font-size:
+        11px;
+
+}
+
+
+
+/* =====================================================
+   DASHBOARD
+===================================================== */
+
+.dashboard {
+
+    padding:
+        100px 7%;
+
+}
+
+
+.section-title {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        50px;
+
+}
+
+
+.section-title h2 {
+
+    font-size:
+        38px;
+
+    margin-bottom:
+        15px;
+
+}
+
+
+.section-title p {
+
+    color:
+        #c8e8ed;
+
+    font-size:
+        13px;
+
+}
+
+
+
+/* =====================================================
+   FEATURE GRID
+===================================================== */
+
+.feature-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    gap:
+        20px;
+
+}
+
+
+
+/* =====================================================
+   DASHBOARD CARDS
+   ONLY CARDS USE CONSOLAS
+===================================================== */
+
+.feature-card {
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    min-height:
+        300px;
+
+    padding:
+        27px;
+
+    border-radius:
+        22px;
+
+    background:
+        rgba(
+            5,
+            65,
+            83,
+            0.58
+        );
+
+    backdrop-filter:
+        blur(20px);
+
+    border:
+        1px solid
+        rgba(
+            230,
+            255,
+            255,
+            0.16
+        );
+
+    transition:
+        0.4s;
+
+}
+
+
+.feature-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(
+            230,
+            255,
+            255,
+            0.35
+        );
+
+}
+
+
+.feature-icon {
+
+    width:
+        50px;
+
+    height:
+        50px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        14px;
+
+    background:
+        rgba(
+            230,
+            255,
+            255,
+            0.12
+        );
+
+    margin-bottom:
+        22px;
+
+    font-size:
+        20px;
+
+}
+
+
+.feature-card h3 {
+
+    font-size:
+        17px;
+
+    font-weight:
+        600;
+
+    margin-bottom:
+        12px;
+
+}
+
+
+.feature-card p {
+
+    color:
+        #c8e8ed;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.7;
+
+}
+
+
+
+/* =====================================================
+   UPLOAD AREA
+===================================================== */
+
+.upload-area {
+
+    margin-top:
+        20px;
+
+    padding:
+        15px;
+
+    border:
+        1px dashed
+        rgba(
+            230,
+            255,
+            255,
+            0.3
+        );
+
+    border-radius:
+        12px;
+
+}
+
+
+.upload-area input {
+
+    width:
+        100%;
+
+    color:
+        white;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    font-size:
+        10px;
+
+}
+
+
+.preview-image {
+
+    display:
+        none;
+
+    width:
+        100%;
+
+    height:
+        110px;
+
+    object-fit:
+        cover;
+
+    border-radius:
+        10px;
+
+    margin-top:
+        12px;
+
+}
+
+
+
+/* =====================================================
+   CAMERA CAPTURE (USB MICROSCOPE / WEBCAM)
+===================================================== */
+
+.camera-select {
+
+    width:
+        100%;
+
+    padding:
+        8px;
+
+    color:
+        white;
+
+    background:
+        rgba(
+            5,
+            65,
+            83,
+            0.6
+        );
+
+    border:
+        1px solid
+        rgba(
+            230,
+            255,
+            255,
+            0.25
+        );
+
+    border-radius:
+        8px;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    font-size:
+        10px;
+
+}
+
+
+.camera-frame {
+
+    margin-top:
+        12px;
+
+    border-radius:
+        10px;
+
+    overflow:
+        hidden;
+
+    background:
+        rgba(
+            0,
+            0,
+            0,
+            0.35
+        );
+
+    aspect-ratio:
+        4 / 3;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+}
+
+
+.camera-frame video {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+}
+
+
+.capture-controls {
+
+    display:
+        flex;
+
+    gap:
+        8px;
+
+    margin-top:
+        12px;
+
+}
+
+
+.capture-btn {
+
+    flex:
+        1;
+
+    padding:
+        9px;
+
+    border-radius:
+        8px;
+
+    border:
+        1px solid
+        rgba(
+            230,
+            255,
+            255,
+            0.3
+        );
+
+    background:
+        rgba(
+            230,
+            255,
+            255,
+            0.1
+        );
+
+    color:
+        white;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    font-size:
+        10px;
+
+    cursor:
+        pointer;
+
+    transition:
+        0.3s;
+
+}
+
+
+.capture-btn:hover {
+
+    background:
+        rgba(
+            230,
+            255,
+            255,
+            0.2
+        );
+
+}
+
+
+.capture-btn:disabled {
+
+    opacity:
+        0.4;
+
+    cursor:
+        not-allowed;
+
+}
+
+
+.upload-divider {
+
+    margin:
+        14px 0 8px;
+
+    text-align:
+        center;
+
+    color:
+        #c8e8ed;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        0.5px;
+
+    text-transform:
+        uppercase;
+
+    opacity:
+        0.7;
+
+}
+
+
+
+/* =====================================================
+   CLASSIFICATION CONFIDENCE BAR
+===================================================== */
+
+.confidence-bar-track {
+
+    margin-top:
+        14px;
+
+    height:
+        6px;
+
+    border-radius:
+        4px;
+
+    background:
+        rgba(
+            230,
+            255,
+            255,
+            0.12
+        );
+
+    overflow:
+        hidden;
+
+}
+
+
+.confidence-bar-fill {
+
+    height:
+        100%;
+
+    width:
+        0%;
+
+    border-radius:
+        4px;
+
+    background:
+        #8effd0;
+
+    transition:
+        width
+        0.8s
+        ease;
+
+}
+
+
+
+/* =====================================================
+   ANALYSIS CARDS
+===================================================== */
+
+#classification-card,
+#analysis-card,
+#understand-card,
+#location-card {
+
+    display:
+        none;
+
+}
+
+
+.live-analysis {
+
+    margin-top:
+        20px;
+
+    padding:
+        12px;
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(
+            230,
+            255,
+            255,
+            0.07
+        );
+
+    font-size:
+        10px;
+
+}
+
+
+.status-dot {
+
+    display:
+        inline-block;
+
+    width:
+        7px;
+
+    height:
+        7px;
+
+    border-radius:
+        50%;
+
+    background:
+        #8effd0;
+
+    margin-right:
+        5px;
+
+}
+
+
+.analysis-value {
+
+    margin-top:
+        20px;
+
+    font-size:
+        22px;
+
+    font-weight:
+        600;
+
+}
+
+
+.analysis-status {
+
+    margin-top:
+        8px;
+
+    color:
+        #c5e7ec;
+
+    font-size:
+        10px;
+
+}
+
+
+
+/* =====================================================
+   CARD APPEAR ANIMATION
+===================================================== */
+
+.card-appear {
+
+    animation:
+        cardAppear
+        0.7s
+        ease
+        forwards;
+
+}
+
+
+@keyframes cardAppear {
+
+    0% {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(
+                30px
+            );
+
+    }
+
+    100% {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(
+                0
+            );
+
+    }
+
+}
+
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    padding:
+        40px;
+
+    text-align:
+        center;
+
+    background:
+        rgba(
+            2,
+            40,
+            55,
+            0.5
+        );
+
+}
+
+
+footer p {
+
+    color:
+        #c2e4e9;
+
+    font-size:
+        11px;
+
+}
+
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (
+    max-width: 1100px
+) {
+
+
+    .ocean-monitor {
+
+        opacity:
+            0.35;
+
+        right:
+            -100px;
+
+    }
+
+
+    .feature-grid {
+
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+
+    }
+
+
+}
+
+
+@media (
+    max-width: 700px
+) {
+
+
+    .nav-links {
+
+        display:
+            none;
+
+    }
+
+
+    .ocean-monitor {
+
+        display:
+            none;
+
+    }
+
+
+    .stats {
+
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+
+    }
+
+
+    .feature-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            48px;
+
+    }
+
+
+}
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+<!-- =====================================================
+     ANIMATED BACKGROUND
+===================================================== -->
+
+<div class="ocean-background">
+
+
+    <div class="ocean-light"></div>
+
+
+    <div class="light-rays">
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+    </div>
+
+
+    <div class="bubbles">
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+    </div>
+
+
+    <div class="plankton">
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+    </div>
+
+
+</div>
+
+
+
+<div
+    class="mouse-glow"
+    id="mouseGlow"
+></div>
+
+
+
+<!-- =====================================================
+     LOGIN PAGE
+===================================================== -->
+
+<div id="loginPage">
+
+
+    <div class="login-box">
+
+
+        <div class="login-logo">
+
+            🌊
+
+        </div>
+
+
+        <h1>
+
+            AquaMind AI
+
+        </h1>
+
+
+        <p>
+
+            Marine Ecosystem Intelligence
+            for a smarter and healthier ocean.
+
+        </p>
+
+
+
+        <div class="login-tabs">
+
+
+            <button
+                class="login-tab active"
+                id="signInTab"
+            >
+
+                Sign In
+
+            </button>
+
+
+            <button
+                class="login-tab"
+                id="signUpTab"
+            >
+
+                Sign Up
+
+            </button>
+
+
+        </div>
+
+
+
+        <form id="loginForm">
+
+
+            <div class="form-group">
+
+
+                <label>
+
+                    Email Address
+
+                </label>
+
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+            </div>
+
+
+
+            <div
+                class="form-group"
+                id="confirmPasswordGroup"
+                style="display:none;"
+            >
+
+
+                <label>
+
+                    Confirm Password
+
+                </label>
+
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm your password"
+                >
+
+
+            </div>
+
+
+
+            <div class="form-group">
+
+
+                <label>
+
+                    Password
+
+                </label>
+
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+
+            </div>
+
+
+
+            <div class="login-options">
+
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                    >
+
+                    Remember me
+
+                </label>
+
+
+                <span>
+
+                    Forgot password?
+
+                </span>
+
+
+            </div>
+
+
+
+            <button
+                type="submit"
+                class="login-button"
+                id="loginButton"
+            >
+
+                Sign In
+
+            </button>
+
+
+            <div
+                class="login-message"
+                id="loginMessage"
+            ></div>
+
+
+        </form>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     MAIN SITE
+===================================================== -->
+
+<div id="mainSite">
+
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav>
+
+
+    <div class="logo">
+
+
+        <div class="logo-icon">
+
+            🌊
+
+        </div>
+
+
+        AquaMind AI
+
+
+    </div>
+
+
+
+    <ul class="nav-links">
+
+
+        <li>
+
+            <a href="#">
+
+                Home
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="#dashboard">
+
+                Dashboard
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="#about">
+
+                About
+
+            </a>
+
+        </li>
+
+
+    </ul>
+
+
+
+    <a
+        href="#dashboard"
+        class="nav-button"
+    >
+
+        Launch Platform
+
+    </a>
+
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+
+    <div class="hero-content">
+
+
+        <div class="badge">
+
+            ● AI-POWERED MARINE INTELLIGENCE
+
+        </div>
+
+
+
+        <h1>
+
+            Understand
+
+            <span>
+
+                Our Oceans.
+
+            </span>
+
+        </h1>
+
+
+
+        <p class="hero-description">
+
+            AquaMind AI transforms plankton monitoring
+            into intelligent ecosystem insights using
+            computer vision, environmental analytics,
+            and real-time ecological intelligence.
+
+        </p>
+
+
+
+        <div class="hero-buttons">
+
+
+            <a
+                href="#dashboard"
+                class="primary-button"
+            >
+
+                Explore Platform
+
+            </a>
+
+
+            <a
+                href="#about"
+                class="secondary-button"
+            >
+
+                Learn More
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         NEW HOLOGRAPHIC OCEAN MONITOR
+    ================================================= -->
+
+    <div class="ocean-monitor">
+
+
+        <div class="monitor-grid"></div>
+
+
+        <div class="monitor-header">
+
+
+            <span>
+
+                AQUAMIND // LIVE SCAN
+
+            </span>
+
+
+            <span class="live-indicator">
+
+                LIVE
+
+            </span>
+
+
+        </div>
+
+
+
+        <div class="sonar">
+
+
+            <div class="sonar-sweep"></div>
+
+
+        </div>
+
+
+
+        <div class="data-point point1"></div>
+
+
+        <div class="data-point point2"></div>
+
+
+        <div class="data-point point3"></div>
+
+
+        <div class="data-point point4"></div>
+
+
+
+        <div class="monitor-footer">
+
+
+            <span>
+
+                PLANKTON DETECTION
+
+            </span>
+
+
+            <span>
+
+                SYSTEM ACTIVE
+
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section class="stats">
+
+
+    <div class="stat">
+
+
+        <h3>
+
+            AI
+
+        </h3>
+
+
+        <p>
+
+            Intelligent Analysis
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="stat">
+
+
+        <h3>
+
+            LIVE
+
+        </h3>
+
+
+        <p>
+
+            Environmental Monitoring
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="stat">
+
+
+        <h3>
+
+            24/7
+
+        </h3>
+
+
+        <p>
+
+            Ecosystem Intelligence
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="stat">
+
+
+        <h3>
+
+            🌊
+
+        </h3>
+
+
+        <p>
+
+            Marine Protection
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     DASHBOARD
+===================================================== -->
+
+<section
+    class="dashboard"
+    id="dashboard"
+>
+
+
+    <div class="section-title">
+
+
+        <h2>
+
+            Marine Intelligence Dashboard
+
+        </h2>
+
+
+        <p>
+
+            Upload an image to simulate
+            real-time ecosystem analysis.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="feature-grid">
+
+
+
+        <!-- CARD 01 -->
+
+        <div class="feature-card">
+
+
+            <div class="feature-icon">
+
+                📷
+
+            </div>
+
+
+            <h3>
+
+                01. Capture
+
+            </h3>
+
+
+            <p>
+
+                Connect a USB digital microscope or use
+                your built-in webcam to capture a live
+                plankton sample.
+
+            </p>
+
+
+
+            <div class="upload-area">
+
+
+                <select
+                    id="cameraSelect"
+                    class="camera-select"
+                >
+
+                    <option value="">
+
+                        Detecting cameras…
+
+                    </option>
+
+                </select>
+
+
+                <div class="camera-frame">
+
+                    <video
+                        id="cameraStream"
+                        autoplay
+                        playsinline
+                        muted
+                    ></video>
+
+                    <canvas
+                        id="captureCanvas"
+                        style="display:none;"
+                    ></canvas>
+
+                </div>
+
+
+                <div class="capture-controls">
+
+                    <button
+                        type="button"
+                        id="startCameraBtn"
+                        class="capture-btn"
+                    >
+
+                        Start Camera
+
+                    </button>
+
+                    <button
+                        type="button"
+                        id="capturePhotoBtn"
+                        class="capture-btn"
+                        disabled
+                    >
+
+                        Capture
+
+                    </button>
+
+                </div>
+
+
+                <div class="upload-divider">
+
+                    — or upload a saved image —
+
+                </div>
+
+
+                <input
+                    type="file"
+                    id="imageUpload"
+                    accept="image/*"
+                >
+
+
+                <img
+                    id="imagePreview"
+                    class="preview-image"
+                    alt="Captured plankton image"
+                >
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- CARD 01B -->
+
+        <div
+            class="feature-card"
+            id="classification-card"
+        >
+
+
+            <div class="feature-icon">
+
+                🔬
+
+            </div>
+
+
+            <h3>
+
+                02. Classify
+
+            </h3>
+
+
+            <p>
+
+                AI compares the captured cell against
+                reference morphology to flag Harmful
+                Algal Bloom (HAB) species versus
+                ordinary phytoplankton.
+
+            </p>
+
+
+
+            <div class="live-analysis">
+
+
+                <span class="status-dot"></span>
+
+
+                Classifying Sample
+
+
+            </div>
+
+
+
+            <div
+                class="analysis-value"
+                id="classificationValue"
+            >
+
+                —
+
+            </div>
+
+
+
+            <div
+                class="analysis-status"
+                id="classificationStatus"
+            >
+
+                Awaiting capture
+
+            </div>
+
+
+
+            <div class="confidence-bar-track">
+
+                <div
+                    class="confidence-bar-fill"
+                    id="confidenceBarFill"
+                ></div>
+
+            </div>
+
+
+            <div
+                class="analysis-status"
+                id="confidenceValue"
+            ></div>
+
+
+        </div>
+
+
+
+        <!-- CARD 02 -->
+
+        <div
+            class="feature-card"
+            id="analysis-card"
+        >
+
+
+            <div class="feature-icon">
+
+                🤖
+
+            </div>
+
+
+            <h3>
+
+                03. Analyze
+
+            </h3>
+
+
+            <p>
+
+                AI models identify and quantify
+                plankton while detecting
+                unfamiliar organisms.
+
+            </p>
+
+
+
+            <div class="live-analysis">
+
+
+                <span class="status-dot"></span>
+
+
+                AI Analysis Active
+
+
+            </div>
+
+
+
+            <div
+                class="analysis-value"
+                id="temperatureValue"
+            >
+
+                24.5°C
+
+            </div>
+
+
+
+            <div
+                class="analysis-status"
+                id="temperatureStatus"
+            >
+
+                Suitable environmental conditions
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- CARD 03 -->
+
+        <div
+            class="feature-card"
+            id="understand-card"
+        >
+
+
+            <div class="feature-icon">
+
+                💧
+
+            </div>
+
+
+            <h3>
+
+                04. Total Dissolved Salts (TDS)
+
+            </h3>
+
+
+            <p>
+
+                Analyze water quality using
+                simulated total dissolved solids
+                monitoring.
+
+            </p>
+
+
+
+            <div
+                class="analysis-value"
+                id="tdsValue"
+            >
+
+                35,000 ppm
+
+            </div>
+
+
+
+            <div
+                class="analysis-status"
+                id="waterStatus"
+            >
+
+                Sea Water
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- CARD 04 -->
+
+        <div
+            class="feature-card"
+            id="location-card"
+        >
+
+
+            <div class="feature-icon">
+
+                📍
+
+            </div>
+
+
+            <h3>
+
+                05. Location
+
+            </h3>
+
+
+            <p>
+
+                Track simulated monitoring
+                coordinates within Chennai
+                coastal waters.
+
+            </p>
+
+
+
+            <div
+                class="analysis-value"
+                id="locationValue"
+            >
+
+                13.0827° N
+
+            </div>
+
+
+
+            <div
+                class="analysis-status"
+                id="longitudeValue"
+            >
+
+                80.2707° E
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section
+    class="dashboard"
+    id="about"
+>
+
+
+    <div class="section-title">
+
+
+        <h2>
+
+            Intelligent Marine Monitoring
+
+        </h2>
+
+
+        <p>
+
+            AquaMind AI combines affordable hardware,
+            computer vision, explainable AI and
+            ecological analytics to support
+            proactive marine ecosystem monitoring.
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+
+<footer>
+
+
+    <p>
+
+        AquaMind AI —
+        AI-Powered Marine Ecosystem Intelligence
+
+    </p>
+
+
+</footer>
+
+
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   MOUSE GLOW
+===================================================== */
+
+const mouseGlow =
+    document.getElementById(
+        "mouseGlow"
+    );
+
+
+document.addEventListener(
+    "mousemove",
+    function(event) {
+
+        mouseGlow.style.left =
+            event.clientX + "px";
+
+        mouseGlow.style.top =
+            event.clientY + "px";
+
+    }
+);
+
+
+
+/* =====================================================
+   LOGIN SYSTEM
+===================================================== */
+
+const loginPage =
+    document.getElementById(
+        "loginPage"
+    );
+
+
+const mainSite =
+    document.getElementById(
+        "mainSite"
+    );
+
+
+const signInTab =
+    document.getElementById(
+        "signInTab"
+    );
+
+
+const signUpTab =
+    document.getElementById(
+        "signUpTab"
+    );
+
+
+const confirmPasswordGroup =
+    document.getElementById(
+        "confirmPasswordGroup"
+    );
+
+
+const confirmPassword =
+    document.getElementById(
+        "confirmPassword"
+    );
+
+
+const loginButton =
+    document.getElementById(
+        "loginButton"
+    );
+
+
+const loginMessage =
+    document.getElementById(
+        "loginMessage"
+    );
+
+
+const loginForm =
+    document.getElementById(
+        "loginForm"
+    );
+
+
+let isSignUp =
+    false;
+
+
+
+signInTab.addEventListener(
+    "click",
+    function() {
+
+        isSignUp =
+            false;
+
+        signInTab.classList.add(
+            "active"
+        );
+
+        signUpTab.classList.remove(
+            "active"
+        );
+
+        confirmPasswordGroup.style.display =
+            "none";
+
+        confirmPassword.required =
+            false;
+
+        loginButton.textContent =
+            "Sign In";
+
+        loginMessage.textContent =
+            "";
+
+    }
+);
+
+
+
+signUpTab.addEventListener(
+    "click",
+    function() {
+
+        isSignUp =
+            true;
+
+        signUpTab.classList.add(
+            "active"
+        );
+
+        signInTab.classList.remove(
+            "active"
+        );
+
+        confirmPasswordGroup.style.display =
+            "block";
+
+        confirmPassword.required =
+            true;
+
+        loginButton.textContent =
+            "Create Account";
+
+        loginMessage.textContent =
+            "";
+
+    }
+);
+
+
+
+loginForm.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        const email =
+            document.getElementById(
+                "email"
+            ).value;
+
+
+        const password =
+            document.getElementById(
+                "password"
+            ).value;
+
+
+
+        if (
+            isSignUp
+        ) {
+
+            if (
+                password !==
+                confirmPassword.value
+            ) {
+
+                loginMessage.textContent =
+                    "Passwords do not match.";
+
+                return;
+
+            }
+
+
+            loginMessage.textContent =
+                "Account created successfully!";
+
+
+            setTimeout(
+                openMainSite,
+                800
+            );
+
+
+        }
+
+        else {
+
+            if (
+                email &&
+                password
+            ) {
+
+                loginMessage.textContent =
+                    "Welcome to AquaMind AI!";
+
+
+                setTimeout(
+                    openMainSite,
+                    800
+                );
+
+            }
+
+        }
+
+    }
+);
+
+
+
+function openMainSite() {
+
+    loginPage.style.display =
+        "none";
+
+    mainSite.style.display =
+        "block";
+
+}
+
+
+
+/* =====================================================
+   IMAGE UPLOAD
+===================================================== */
+
+const imageUpload =
+    document.getElementById(
+        "imageUpload"
+    );
+
+
+const imagePreview =
+    document.getElementById(
+        "imagePreview"
+    );
+
+
+const classificationCard =
+    document.getElementById(
+        "classification-card"
+    );
+
+
+const analysisCard =
+    document.getElementById(
+        "analysis-card"
+    );
+
+
+const understandCard =
+    document.getElementById(
+        "understand-card"
+    );
+
+
+const locationCard =
+    document.getElementById(
+        "location-card"
+    );
+
+
+const classificationValue =
+    document.getElementById(
+        "classificationValue"
+    );
+
+
+const classificationStatus =
+    document.getElementById(
+        "classificationStatus"
+    );
+
+
+const confidenceBarFill =
+    document.getElementById(
+        "confidenceBarFill"
+    );
+
+
+const confidenceValue =
+    document.getElementById(
+        "confidenceValue"
+    );
+
+
+
+/* =====================================================
+   LIVE CAMERA CAPTURE
+   Works with a built-in webcam or an external USB
+   digital microscope — most USB microscopes present
+   themselves to the browser as a standard video input
+   device, so both show up in the camera list below.
+===================================================== */
+
+const cameraSelect =
+    document.getElementById(
+        "cameraSelect"
+    );
+
+
+const cameraStream =
+    document.getElementById(
+        "cameraStream"
+    );
+
+
+const captureCanvas =
+    document.getElementById(
+        "captureCanvas"
+    );
+
+
+const startCameraBtn =
+    document.getElementById(
+        "startCameraBtn"
+    );
+
+
+const capturePhotoBtn =
+    document.getElementById(
+        "capturePhotoBtn"
+    );
+
+
+let activeCameraStream =
+    null;
+
+
+
+async function listCameras() {
+
+    if (
+        !navigator.mediaDevices
+        ||
+        !navigator.mediaDevices.enumerateDevices
+    ) {
+
+        cameraSelect.innerHTML =
+            "<option value=''>Camera access not supported in this browser</option>";
+
+        return;
+
+    }
+
+
+    try {
+
+        const devices =
+            await navigator.mediaDevices.enumerateDevices();
+
+        const cameras =
+            devices.filter(
+                function(device) {
+
+                    return device.kind === "videoinput";
+
+                }
+            );
+
+
+        if (
+            cameras.length === 0
+        ) {
+
+            cameraSelect.innerHTML =
+                "<option value=''>No camera detected</option>";
+
+            return;
+
+        }
+
+
+        const previousValue =
+            cameraSelect.value;
+
+        cameraSelect.innerHTML =
+            "";
+
+        cameras.forEach(
+            function(camera, index) {
+
+                const option =
+                    document.createElement(
+                        "option"
+                    );
+
+                option.value =
+                    camera.deviceId;
+
+                option.textContent =
+                    camera.label
+                    ||
+                    (
+                        "Camera "
+                        +
+                        (index + 1)
+                        +
+                        " (webcam or USB microscope)"
+                    );
+
+                cameraSelect.appendChild(
+                    option
+                );
+
+            }
+        );
+
+
+        if (
+            previousValue
+            &&
+            cameras.some(
+                function(camera) {
+
+                    return camera.deviceId === previousValue;
+
+                }
+            )
+        ) {
+
+            cameraSelect.value =
+                previousValue;
+
+        }
+
+    } catch (error) {
+
+        cameraSelect.innerHTML =
+            "<option value=''>Camera list unavailable</option>";
+
+    }
+
+}
+
+
+
+async function startCamera() {
+
+    if (
+        !navigator.mediaDevices
+        ||
+        !navigator.mediaDevices.getUserMedia
+    ) {
+
+        alert(
+            "This browser does not support camera capture."
+        );
+
+        return;
+
+    }
+
+
+    const deviceId =
+        cameraSelect.value;
+
+    const constraints = {
+        video:
+            deviceId
+                ? { deviceId: { exact: deviceId } }
+                : true,
+        audio:
+            false
+    };
+
+
+    try {
+
+        if (
+            activeCameraStream
+        ) {
+
+            activeCameraStream.getTracks().forEach(
+                function(track) {
+
+                    track.stop();
+
+                }
+            );
+
+        }
+
+
+        activeCameraStream =
+            await navigator.mediaDevices.getUserMedia(
+                constraints
+            );
+
+
+        cameraStream.srcObject =
+            activeCameraStream;
+
+
+        capturePhotoBtn.disabled =
+            false;
+
+        startCameraBtn.textContent =
+            "Restart Camera";
+
+
+        /*
+           Device labels are only populated by the
+           browser once permission has been granted,
+           so refresh the list right after connecting.
+        */
+
+        listCameras();
+
+    } catch (error) {
+
+        alert(
+            "Could not access the selected camera. "
+            +
+            "Check that your webcam or USB microscope "
+            +
+            "is connected and camera permission is allowed."
+        );
+
+    }
+
+}
+
+
+
+startCameraBtn.addEventListener(
+    "click",
+    startCamera
+);
+
+
+cameraSelect.addEventListener(
+    "change",
+    function() {
+
+        if (
+            activeCameraStream
+        ) {
+
+            startCamera();
+
+        }
+
+    }
+);
+
+
+if (
+    navigator.mediaDevices
+) {
+
+    navigator.mediaDevices.addEventListener(
+        "devicechange",
+        listCameras
+    );
+
+}
+
+
+listCameras();
+
+
+
+capturePhotoBtn.addEventListener(
+    "click",
+    function() {
+
+
+        if (
+            !activeCameraStream
+        ) {
+
+            return;
+
+        }
+
+
+        captureCanvas.width =
+            cameraStream.videoWidth;
+
+        captureCanvas.height =
+            cameraStream.videoHeight;
+
+
+        const context =
+            captureCanvas.getContext(
+                "2d"
+            );
+
+        context.drawImage(
+            cameraStream,
+            0,
+            0,
+            captureCanvas.width,
+            captureCanvas.height
+        );
+
+
+        const dataUrl =
+            captureCanvas.toDataURL(
+                "image/png"
+            );
+
+
+        imagePreview.src =
+            dataUrl;
+
+        imagePreview.style.display =
+            "block";
+
+
+        processCapturedImage(
+            dataUrl
+        );
+
+
+    }
+);
+
+
+
+/* =====================================================
+   FALLBACK: UPLOAD A SAVED IMAGE
+===================================================== */
+
+imageUpload.addEventListener(
+    "change",
+    function(event) {
+
+
+        const file =
+            event.target.files[0];
+
+
+        if (
+            !file
+        ) {
+
+            return;
+
+        }
+
+
+        const objectUrl =
+            URL.createObjectURL(
+                file
+            );
+
+
+        imagePreview.src =
+            objectUrl;
+
+
+        imagePreview.style.display =
+            "block";
+
+
+        processCapturedImage(
+            objectUrl
+        );
+
+
+    }
+);
+
+
+
+/* =====================================================
+   SHARED CAPTURE PIPELINE
+   Runs for both live camera captures and file uploads,
+   reveals the live data cards, and classifies the
+   sample as HAB or Phytoplankton.
+===================================================== */
+
+function processCapturedImage(imageSrc) {
+
+
+    /*
+       RESET ALL LIVE DATA CARDS
+    */
+
+    classificationCard.style.display =
+        "none";
+
+    analysisCard.style.display =
+        "none";
+
+    understandCard.style.display =
+        "none";
+
+    locationCard.style.display =
+        "none";
+
+
+
+    classificationCard.classList.remove(
+        "card-appear"
+    );
+
+    analysisCard.classList.remove(
+        "card-appear"
+    );
+
+    understandCard.classList.remove(
+        "card-appear"
+    );
+
+    locationCard.classList.remove(
+        "card-appear"
+    );
+
+
+    classificationValue.textContent =
+        "—";
+
+    classificationStatus.textContent =
+        "Classifying sample…";
+
+    confidenceBarFill.style.width =
+        "0%";
+
+    confidenceValue.textContent =
+        "";
+
+
+
+    /*
+       CLASSIFICATION CARD
+       AFTER 1.5 SECONDS
+    */
+
+    // Generate this capture's simulated temperature/TDS
+    // up front so the classifier and the sensor cards
+    // agree with each other instead of drifting apart.
+    const captureTemperatureC =
+        parseFloat(
+            (
+                Math.random()
+                *
+                14
+                +
+                18
+            ).toFixed(1)
+        );
+
+    const captureTdsPpm =
+        Math.floor(
+            Math.random()
+            *
+            (
+                42000
+                -
+                500
+            )
+            +
+            500
+        );
+
+
+    setTimeout(
+        function() {
+
+
+            classificationCard.style.display =
+                "block";
+
+
+            classificationCard.classList.add(
+                "card-appear"
+            );
+
+
+            classifySample(
+                imageSrc,
+                captureTemperatureC,
+                captureTdsPpm
+            ).then(
+                updateClassification
+            );
+
+
+        },
+
+        1500
+
+    );
+
+
+
+    /*
+       CARD 03 (ANALYZE)
+       AFTER 3 SECONDS
+    */
+
+    setTimeout(
+        function() {
+
+
+            analysisCard.style.display =
+                "block";
+
+
+            analysisCard.classList.add(
+                "card-appear"
+            );
+
+
+            updateTemperature(
+                captureTemperatureC
+            );
+
+
+        },
+
+        3000
+
+    );
+
+
+
+    /*
+       CARD 04 (TDS)
+       AFTER 4 SECONDS
+    */
+
+    setTimeout(
+        function() {
+
+
+            understandCard.style.display =
+                "block";
+
+
+            understandCard.classList.add(
+                "card-appear"
+            );
+
+
+            updateTDS(
+                captureTdsPpm
+            );
+
+
+        },
+
+        4000
+
+    );
+
+
+
+    /*
+       CARD 05 (LOCATION)
+       AFTER 5 SECONDS
+    */
+
+    setTimeout(
+        function() {
+
+
+            locationCard.style.display =
+                "block";
+
+
+            locationCard.classList.add(
+                "card-appear"
+            );
+
+
+            updateLocation();
+
+
+        },
+
+        5000
+
+    );
+
+
+}
+
+
+
+/* =====================================================
+   HAB vs PHYTOPLANKTON CLASSIFICATION
+
+   NOTE ON METHODOLOGY / HONESTY ABOUT DATA SOURCE:
+   -------------------------------------------------
+   This build could NOT download and train on the raw
+   USGS data release "Harmonized continuous water quality
+   data in support of modeling harmful algal blooms in
+   the United States, 2005-2022" (Platt et al., 2023,
+   https://doi.org/10.5066/P9LCT8DZ) because this sandbox
+   has no outbound network access to sciencebase.gov.
+
+   What IS real here:
+   - The classification thresholds below are the actual
+     published guideline values used by WHO and EPA to
+     separate benign phytoplankton readings from
+     cyanobacterial HAB conditions:
+       * WHO (1999) Guidelines for Safe Recreational
+         Water Environments: >=10 ug/L chlorophyll-a
+         with cyanobacterial dominance = elevated-risk
+         threshold; >=50 ug/L = high-risk threshold.
+       * US EPA (2019) recommended cyanotoxin recreational
+         values (8 ug/L microcystin action level) and
+         EPA's 2019 guidance identifying chlorophyll-a AND
+         phycocyanin as the two key optical bloom
+         indicators (phycocyanin is cyanobacteria-specific;
+         chlorophyll-a is common to all algae).
+       * Warm water (roughly 25-30C) and elevated
+         nutrient/ionic loading favor cyanobacterial
+         dominance over other phytoplankton (Paerl &
+         Huisman, 2008, "Blooms Like It Hot", Science).
+
+   What is SIMULATED (because there is no real spectral
+   sensor or lab assay attached to this demo):
+   - A phone/webcam camera does not measure chlorophyll-a
+     or phycocyanin directly. Real HAB monitoring uses
+     narrow-band reflectance (e.g. 665nm vs 705nm) or lab
+     fluorometry, not RGB pixels. Here, RGB pixel averages
+     are used as a rough optical PROXY for chlorophyll
+     (green dominance) and for cyanobacterial pigment
+     (blue-green hue shift), scaled onto the real ug/L
+     threshold scale above so the logic mirrors the actual
+     guidance -- but the underlying "sensor reading" itself
+     is illustrative, not a validated instrument.
+   - Temperature and TDS are already simulated elsewhere
+     in this file (see updateTemperature/updateTDS); this
+     function reuses those same simulated values so the
+     classification stays internally consistent with what
+     the dashboard displays.
+
+   TO USE A REAL TRAINED MODEL:
+   Provide the harmonized CSVs from the data release above
+   (daily_chlorophyll.csv, phycocyanin file if present,
+   daily_temperature.csv, daily_nutrient.csv, site_metadata.csv)
+   and train an actual classifier (e.g. scikit-learn) on
+   the real NWIS observations; export it (ONNX / ported
+   coefficients) and call it here instead of this proxy
+   logic, or POST to a backend the way the original
+   placeholder comment described:
+
+       const formData = new FormData();
+       formData.append("file", await (await fetch(imageSrc)).blob(), "capture.png");
+       const response = await fetch("http://localhost:8000/predict", {
+           method: "POST",
+           body: formData
+       });
+       const result = await response.json();
+       // result.predicted_class / result.confidence
+
+===================================================== */
+
+// Published guideline constants (real values, cited above)
+const WHO_CHLOROPHYLL_CAUTION_UGL = 10;   // WHO 1999 low-risk threshold
+const WHO_CHLOROPHYLL_HIGHRISK_UGL = 50;  // WHO 1999 high-risk threshold
+const CYANO_FAVORABLE_TEMP_LOW_C = 25;    // Paerl & Huisman 2008
+const CYANO_FAVORABLE_TEMP_HIGH_C = 32;
+const CYANO_FAVORABLE_TDS_PPM = 1000;     // elevated ionic/nutrient loading
+
+
+function classifySample(imageSrc, simTemperatureC, simTdsPpm) {
+
+    return new Promise(
+        function(resolve) {
+
+
+            const image =
+                new Image();
+
+
+            image.onload =
+                function() {
+
+
+                    const sampleSize =
+                        64;
+
+                    const sampleCanvas =
+                        document.createElement(
+                            "canvas"
+                        );
+
+                    sampleCanvas.width =
+                        sampleSize;
+
+                    sampleCanvas.height =
+                        sampleSize;
+
+
+                    const context =
+                        sampleCanvas.getContext(
+                            "2d"
+                        );
+
+                    context.drawImage(
+                        image,
+                        0,
+                        0,
+                        sampleSize,
+                        sampleSize
+                    );
+
+
+                    const pixels =
+                        context.getImageData(
+                            0,
+                            0,
+                            sampleSize,
+                            sampleSize
+                        ).data;
+
+
+                    let redTotal = 0;
+                    let greenTotal = 0;
+                    let blueTotal = 0;
+                    let pixelCount = 0;
+
+
+                    for (
+                        let i = 0;
+                        i < pixels.length;
+                        i += 4
+                    ) {
+
+                        redTotal += pixels[i];
+
+                        greenTotal += pixels[i + 1];
+
+                        blueTotal += pixels[i + 2];
+
+                        pixelCount++;
+
+                    }
+
+
+                    const redAverage =
+                        redTotal / pixelCount;
+
+                    const greenAverage =
+                        greenTotal / pixelCount;
+
+                    const blueAverage =
+                        blueTotal / pixelCount;
+
+
+                    // ---- Optical proxies ----
+
+                    // Chlorophyll proxy (green-dominance index,
+                    // loosely analogous to NDCI used in remote
+                    // sensing), rescaled onto a 0-70 ug/L range
+                    // so it sits on the real WHO threshold scale.
+                    const greenDominance =
+                        (greenAverage - redAverage) /
+                        (greenAverage + redAverage + 1);
+
+                    const chlorophyllEstimateUgL =
+                        Math.max(
+                            0,
+                            (greenDominance + 0.15) * 120
+                        );
+
+                    // Cyanobacteria (phycocyanin-analog) proxy:
+                    // cyanobacterial scums trend blue-green/teal,
+                    // whereas diatoms/green algae trend more green
+                    // or golden-brown. Approximated via blue-vs-red
+                    // shift relative to green.
+                    const cyanoHueShift =
+                        (blueAverage - redAverage) /
+                        (greenAverage + blueAverage + redAverage + 1);
+
+                    const cyanoDominanceFraction =
+                        Math.min(
+                            1,
+                            Math.max(
+                                0,
+                                cyanoHueShift * 2.2 + 0.35
+                            )
+                        );
+
+
+                    // ---- Environmental favorability ----
+
+                    const temperatureC =
+                        simTemperatureC !== undefined
+                            ? simTemperatureC
+                            : 24;
+
+                    const tdsPpm =
+                        simTdsPpm !== undefined
+                            ? simTdsPpm
+                            : 500;
+
+                    const temperatureFavorability =
+                        (temperatureC >= CYANO_FAVORABLE_TEMP_LOW_C &&
+                         temperatureC <= CYANO_FAVORABLE_TEMP_HIGH_C)
+                            ? 1
+                            : Math.max(
+                                0,
+                                1 -
+                                Math.min(
+                                    Math.abs(temperatureC - CYANO_FAVORABLE_TEMP_LOW_C),
+                                    Math.abs(temperatureC - CYANO_FAVORABLE_TEMP_HIGH_C)
+                                ) / 12
+                            );
+
+                    const nutrientFavorability =
+                        Math.min(
+                            1,
+                            tdsPpm / CYANO_FAVORABLE_TDS_PPM
+                        );
+
+
+                    // ---- Combine into WHO/EPA-anchored score ----
+                    // Base risk from chlorophyll vs WHO thresholds
+                    let chlorophyllRisk;
+
+                    if (chlorophyllEstimateUgL >= WHO_CHLOROPHYLL_HIGHRISK_UGL) {
+                        chlorophyllRisk = 0.9;
+                    } else if (chlorophyllEstimateUgL >= WHO_CHLOROPHYLL_CAUTION_UGL) {
+                        chlorophyllRisk =
+                            0.55 +
+                            0.35 *
+                            (
+                                (chlorophyllEstimateUgL - WHO_CHLOROPHYLL_CAUTION_UGL) /
+                                (WHO_CHLOROPHYLL_HIGHRISK_UGL - WHO_CHLOROPHYLL_CAUTION_UGL)
+                            );
+                    } else {
+                        chlorophyllRisk =
+                            0.55 *
+                            (chlorophyllEstimateUgL / WHO_CHLOROPHYLL_CAUTION_UGL);
+                    }
+
+                    // Weighted combination: chlorophyll level is
+                    // the primary signal; cyanobacterial hue,
+                    // temperature, and nutrient loading modulate it,
+                    // since chlorophyll alone doesn't distinguish
+                    // harmful cyanobacteria from benign phytoplankton.
+                    const habScore =
+                        Math.min(
+                            1,
+                            Math.max(
+                                0,
+                                (chlorophyllRisk * 0.5) +
+                                (cyanoDominanceFraction * 0.3) +
+                                (temperatureFavorability * 0.1) +
+                                (nutrientFavorability * 0.1)
+                            )
+                        );
+
+
+                    resolve({
+                        habScore: habScore,
+                        chlorophyllEstimateUgL: chlorophyllEstimateUgL,
+                        cyanoDominanceFraction: cyanoDominanceFraction
+                    });
+
+
+                };
+
+
+            image.onerror =
+                function() {
+
+                    resolve({
+                        habScore: 0.3,
+                        chlorophyllEstimateUgL: 5,
+                        cyanoDominanceFraction: 0.3
+                    });
+
+                };
+
+
+            image.src =
+                imageSrc;
+
+
+        }
+    );
+
+}
+
+
+
+function updateClassification(result) {
+
+
+    const habScore =
+        result.habScore;
+
+    const isHAB =
+        habScore >= 0.5;
+
+    const confidence =
+        (
+            isHAB
+                ? habScore
+                : 1 - habScore
+        )
+        * 100;
+
+
+    classificationValue.textContent =
+        isHAB
+            ? "⚠ Harmful Algal Bloom (HAB)"
+            : "✓ Phytoplankton";
+
+
+    classificationValue.style.color =
+        isHAB
+            ? "#ff8e8e"
+            : "#8effd0";
+
+
+    const chlorophyllLabel =
+        "Est. chlorophyll-a ~" +
+        result.chlorophyllEstimateUgL.toFixed(1) +
+        " µg/L (WHO caution: 10 µg/L, high-risk: 50 µg/L)";
+
+    classificationStatus.textContent =
+        isHAB
+            ? "Potentially toxic species detected — flag for review. " + chlorophyllLabel
+            : "Non-harmful phytoplankton — normal reading. " + chlorophyllLabel;
+
+
+    confidenceBarFill.style.width =
+        confidence.toFixed(0) + "%";
+
+    confidenceBarFill.style.background =
+        isHAB
+            ? "#ff8e8e"
+            : "#8effd0";
+
+
+    confidenceValue.textContent =
+        "Confidence: " + confidence.toFixed(1) + "%";
+
+
+}
+
+
+
+
+/* =====================================================
+   TEMPERATURE
+===================================================== */
+
+const temperatureValue =
+    document.getElementById(
+        "temperatureValue"
+    );
+
+
+const temperatureStatus =
+    document.getElementById(
+        "temperatureStatus"
+    );
+
+
+function updateTemperature(forcedValue) {
+
+
+    const temperature =
+        forcedValue !== undefined
+            ? forcedValue.toFixed(1)
+            : (
+                Math.random()
+                *
+                14
+                +
+                18
+            ).toFixed(1);
+
+
+    temperatureValue.textContent =
+        temperature
+        +
+        "°C";
+
+
+    if (
+        temperature < 20
+    ) {
+
+        temperatureStatus.textContent =
+            "Cool water conditions";
+
+    }
+
+    else if (
+        temperature <= 28
+    ) {
+
+        temperatureStatus.textContent =
+            "Favorable conditions";
+
+    }
+
+    else {
+
+        temperatureStatus.textContent =
+            "Elevated temperature detected";
+
+    }
+
+}
+
+
+
+/* =====================================================
+   TDS WATER ANALYSIS
+===================================================== */
+
+const tdsValue =
+    document.getElementById(
+        "tdsValue"
+    );
+
+
+const waterStatus =
+    document.getElementById(
+        "waterStatus"
+    );
+
+
+function updateTDS(forcedValue) {
+
+
+    const tds =
+        forcedValue !== undefined
+            ? forcedValue
+            : Math.floor(
+                Math.random()
+                *
+                (
+                    42000
+                    -
+                    500
+                )
+                +
+                500
+            );
+
+
+    tdsValue.textContent =
+        tds.toLocaleString()
+        +
+        " ppm";
+
+
+    if (
+        tds < 1000
+    ) {
+
+        waterStatus.textContent =
+            "Fresh Water";
+
+    }
+
+    else if (
+        tds < 5000
+    ) {
+
+        waterStatus.textContent =
+            "Brackish Water";
+
+    }
+
+    else if (
+        tds < 15000
+    ) {
+
+        waterStatus.textContent =
+            "Highly Brackish Water";
+
+    }
+
+    else if (
+        tds < 30000
+    ) {
+
+        waterStatus.textContent =
+            "Saline Water";
+
+    }
+
+    else if (
+        tds <= 40000
+    ) {
+
+        waterStatus.textContent =
+            "Sea Water";
+
+    }
+
+    else {
+
+        waterStatus.textContent =
+            "Brine";
+
+    }
+
+}
+
+
+
+/* =====================================================
+   CHENNAI COASTAL LOCATION
+===================================================== */
+
+const locationValue =
+    document.getElementById(
+        "locationValue"
+    );
+
+
+const longitudeValue =
+    document.getElementById(
+        "longitudeValue"
+    );
+
+
+function updateLocation() {
+
+
+    /*
+       Simulated Chennai
+       coastal monitoring area.
+
+       Latitude:
+       12.95 - 13.15
+
+       Longitude:
+       80.20 - 80.35
+    */
+
+
+    const latitude =
+        (
+            12.95
+            +
+            Math.random()
+            *
+            0.20
+        ).toFixed(4);
+
+
+    const longitude =
+        (
+            80.20
+            +
+            Math.random()
+            *
+            0.15
+        ).toFixed(4);
+
+
+    locationValue.textContent =
+        latitude
+        +
+        "° N";
+
+
+    longitudeValue.textContent =
+        longitude
+        +
+        "° E";
+
+}
+
+
+
+/* =====================================================
+   CONTINUOUS LIVE SIMULATION
+===================================================== */
+
+setInterval(
+    function() {
+
+
+        if (
+            analysisCard.style.display
+            ===
+            "block"
+        ) {
+
+            updateTemperature();
+
+        }
+
+
+        if (
+            understandCard.style.display
+            ===
+            "block"
+        ) {
+
+            updateTDS();
+
+        }
+
+
+        if (
+            locationCard.style.display
+            ===
+            "block"
+        ) {
+
+            updateLocation();
+
+        }
+
+
+    },
+
+    4000
+
+);
+
+
+</script>
+
+
+</body>
+
+</html>
